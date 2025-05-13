@@ -16,15 +16,12 @@
 
 <!-- Header -->
 <header class="bg-[#392E7F] text-white sticky top-0 z-50 h-[60px]" x-data="{ open: false }">
-  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between ">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
 
     <!-- Logo -->
-<div class=" top-0 left-0x">
-  <div>
-    <img src="assets/images/IntelliWise logo.png" alt="Logo" class="top-2 fixed h-[7vh] w-auto">
-  </div>
-</div>
-
+    <div class="flex-shrink-0">
+      <img src="assets/images/IntelliWise logo.png" alt="Logo" class="h-[40px] w-auto">
+    </div>
 
     <!-- Desktop Menu -->
     <nav class="hidden md:flex items-center gap-4 lg:gap-8 text-sm font-medium">
@@ -61,6 +58,7 @@
     <a href="#contact" class="block bg-[#FFC700] text-[#392E7F] px-4 py-2 rounded-sm font-semibold hover:bg-yellow-500 transition">Connect Now</a>
   </div>
 </header>
+
 
 <a href="https://wa.me/9082378708"
    target="_blank"
@@ -129,14 +127,14 @@
     <div class="absolute inset-0 bg-black bg-opacity-30 z-10 pointer-events-none "></div>
 
     <!-- Left Arrow -->
-<button @click="prev()" class="absolute left-4 top-[93%] md:top-1/2 transform -translate-y-1/2 bg-yellow-400 text-purple-900 hover:bg-purple-800 hover:text-white p-2 md:p-3 rounded-full shadow-lg z-20">
+<button @click="prev()" class="absolute left-4 top-[89%] left-[12%] md:top-1/2 transform -translate-y-1/2 bg-yellow-400 text-purple-900 hover:bg-purple-800 hover:text-white p-2 md:p-3 rounded-full shadow-lg z-20">
   <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
   </svg>
 </button>
 
 <!-- Right Arrow -->
-<button @click="next()" class="absolute right-4 top-[93%] md:top-1/2 transform -translate-y-1/2 bg-yellow-400 text-purple-900 hover:bg-purple-800 hover:text-white p-2 md:p-3 rounded-full shadow-lg z-20">
+<button @click="next()" class="absolute right-4 top-[89%] right-[12%] md:top-1/2 transform -translate-y-1/2 bg-yellow-400 text-purple-900 hover:bg-purple-800 hover:text-white p-2 md:p-3 rounded-full shadow-lg z-20">
   <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
   </svg>
@@ -144,7 +142,7 @@
 
 
     <!-- Pagination -->
-    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+    <div class="absolute bottom-6 left-1/2 transform  top-[89%] items-center -translate-x-1/2 flex space-x-2 z-20">
       <template x-for="(video, index) in videos" :key="index">
         <button @click="goTo(index)"
                 :class="current === index ? 'bg-yellow-400' : 'bg-white'"
@@ -178,17 +176,25 @@
 
 <!-- Purple Top Banner -->
 <section class="bg-[#3D2C8D] text-white px-20 md:px-20 py-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-1">
-  <div>
-    <p class="text-sm md:text-base font-semibold text-yellow-400">
+  <div class="flex flex-col space-y-4">
+
+    <!-- Heading -->
+    <h2 class="text-left text-[#FFC700] text-base md:text-lg font-semibold leading-snug">
       To be a global catalyst for accessible, adaptive, and purposeful learning
+    </h2>
+
+    <!-- Paragraph -->
+    <p class="text-left text-sm md:text-base leading-relaxed">
+      IntelliWise Academy is a transformative learning ecosystem committed to empowering individuals from all walks of life – students, professionals, educators, and executives.
     </p>
-    <p class="text-sm md:text-base mt-1">
-      IntelliWise Academy is a transformative learning ecosystem committed to empowering individuals from all walks of life - students, professionals, educators, and executives.
-    </p>
-  </div>
-<a class="text-sm md:text-base border border-yellow-400 text-white px-6 py-1 rounded hover:bg-yellow-400 hover:text-[#392E7F] transition whitespace-nowrap">
-  +91 9082378708
-</a>
+
+    <!-- Phone & WhatsApp Row -->
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-3 sm:space-y-0 sm:space-x-4 mt-2">
+
+      <!-- Phone Button -->
+      <a href="https://wa.me/9082378708" class="w-full sm:w-auto text-center border border-[#FFC700] text-[#FFC700] px-4 py-2 rounded-md text-sm font-medium hover:bg-[#FFC700] hover:text-[#392E7F] transition">
+        +91 9082378708
+      </a>
 
 
 </section>
@@ -223,10 +229,10 @@
 
     <!-- Aspiring Educators -->
     <div class="bg-gray-100 rounded-lg p-6 hover:shadow-lg transition">
-      <img src="assets/images/who-we-serve/3.png" alt="Aspiring Educators" class="mx-auto mb-4 h-16">
+      <img src="assets/images/who-we-serve/3.png" alt="Aspiring Professionals" class="mx-auto mb-4 h-16">
       <h3 class="text-xl font-semibold text-purple-900">Aspiring Educators</h3>
       <p class="text-gray-600 mt-2 text-sm line-limit-3">
-        Innovative experiential methodologies to inspire and educate the next generation
+        Innovative experiential methodologies to inspire and empower the next generation
       </p>
     </div>
 
@@ -254,7 +260,7 @@
   <img src="assets/images/who-we-serve/hero-background.JPG" alt="Speaker on Stage" class="w-full h-[100vh] object-cover object-center">
 
   <div class="absolute top-0 left-0 p-4 md:p-10 lg:p-16">
-    <p class="text-white text-sm sm:text-base md:text-lg lg:text-xl font-medium leading-relaxed bg-black/20 p-4 md:p-6 rounded-lg shadow-md max-w-md md:max-w-xl lg:max-w-2xl">
+    <p class="text-white text-sm sm:text-base left-[10%] md:text-lg lg:text-xl font-medium leading-relaxed bg-black/20 p-4 md:p-6 rounded-lg shadow-md max-w-md md:max-w-xl lg:max-w-2xl">
       Our programs are designed with industry collaboration and real-world relevance to keep learners ahead of the curve.
       Through experiential learning and expert-led training, we build essential life skills, foster design thinking, and
       nurture problem-solving for a rapidly changing world.
@@ -300,45 +306,46 @@
 </section>
 
 
-<!-- Why Us -->
-<section id="whyus" class="py-02 bg-white">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-purple-900 mb-2">Why Us?</h2>
-    <p class="text-lg md:text-xl text-purple-900 mb-8 font-medium leading-snug max-w-3xl mx-auto">
-      We enable and empower individuals from all backgrounds through transformative and outcome-driven learning.
-    </p>
+  <!-- Why Us -->
+  <section class="py-02 bg-white">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 id="whyus" class="scroll-mt-24 text-3xl md:text-4xl font-bold text-purple-900 mb-2">Why Us?</h2>
+      <p class="text-lg md:text-xl text-purple-900 mb-8 font-medium leading-snug max-w-3xl mx-auto">
+        We enable and empower individuals from all backgrounds through transformative and outcome-driven learning.
+      </p>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
-      <!-- Industry Relevance -->
-      <div>
-        <img src="assets/images/why-us/1.png" alt="Industry Relevance" class="w-16 h-16 mx-auto mb-3">
-        <h3 class="text-md font-semibold text-purple-900">Industry Relevance</h3>
-        <p class="text-sm text-gray-700">Programs designed with inputs from industry experts</p>
-      </div>
+      <div class="flex top-[40%] justify-center">
+  <div class="grid grid-cols-1 top-[40%] sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 max-w-5xl w-full">
+        <!-- Industry Relevance -->
+        <div>
+          <img src="assets/images/why-us/1.png" alt="Industry Relevance" class="w-16 h-16 mx-auto mb-3">
+          <h3 class="text-md font-semibold text-purple-900">Industry Relevance</h3>
+          <p class="text-sm text-gray-700">Programs designed with inputs from industry experts</p>
+        </div>
 
-      <!-- Expert Led Delivery -->
-      <div>
-        <img src="assets/images/why-us/2.png" alt="Expert Led Delivery" class="w-16 h-16 mx-auto mb-3">
-        <h3 class="text-md font-semibold text-purple-900">Expert Led Delivery</h3>
-        <p class="text-sm text-gray-700">Learn from seasoned <br> professionals  </br> </p> 
-      </div>
+        <!-- Expert Led Delivery -->
+        <div>
+          <img src="assets/images/why-us/2.png" alt="Expert Led Delivery" class="w-16 h-16 mx-auto mb-3">
+          <h3 class="text-md font-semibold text-purple-900">Expert Led Delivery</h3>
+          <p class="text-sm text-gray-700">Learn from seasoned <br> professionals  </br> </p> 
+        </div>
 
-      <!-- Flexible Learning -->
-      <div>
-        <img src="assets/images/why-us/3.png" alt="Flexible Learning" class="w-16 h-16 mx-auto mb-3">
-        <h3 class="text-md font-semibold text-purple-900">Flexible Learning</h3>
-        <p class="text-sm text-gray-700">Live and self-paced modules that fit your schedule</p>
-      </div>  
+        <!-- Flexible Learning -->
+        <div>
+          <img src="assets/images/why-us/3.png" alt="Flexible Learning" class="w-16 h-16 mx-auto mb-3">
+          <h3 class="text-md font-semibold text-purple-900">Flexible Learning</h3>
+          <p class="text-sm text-gray-700">Live and self-paced modules that fit your schedule</p>
+        </div>  
 
-      <!-- Corporate Collaboration -->
-      <div>
-        <img src="assets/images/why-us/4.png" alt="Corporate Collaboration" class="w-16 h-16 mx-auto mb-3">
-        <h3 class="text-md font-semibold text-purple-900">Corporate Collaboration</h3>
-        <p class="text-sm text-gray-700">Career guidance, mentorship, networking, and collaboration</p>
+        <!-- Corporate Collaboration -->
+        <div>
+          <img src="assets/images/why-us/4.png" alt="Corporate Collaboration" class="w-16 h-16 mx-auto mb-3">
+          <h3 class="text-md font-semibold text-purple-900">Corporate Collaboration</h3>
+          <p class="text-sm text-gray-700">Career guidance, mentorship, networking, and collaboration</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
 <!-- About Us -->
@@ -346,9 +353,9 @@
   <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-start gap-10">
     
     <!-- Text Section -->
-    <div class="md:w-1/2 pt-10">
-      <h2 class="text-3xl font-semibold mb-4 text-purple-900">About Us</h2>
-      <p class="text-justify">
+    <div class="md:w-1/2 flex-row pt-10">
+      <h2 class="text-4xl font-semibold mb-4 text-purple-900">About Us</h2>
+      <p class="text-justify text-md"> 
         IntelliWise Academy is a transformative learning ecosystem empowering individuals from different walks of life. 
         Rooted in the holding company Intellidea’s vision of human-centric innovation, it bridges the gap between theory 
         and practice through curated programs focused on real-world skills and continuous growth. In collaboration with 
