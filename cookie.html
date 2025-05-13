@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/alpinejs" defer></script>
+  <title>IntelliWise</title>
+  <style>[x-cloak] { display: none !important; }</style>
+</head>
+<body class="bg-white scroll-smooth">
+
+<!-- Header -->
+<header class="bg-[#392E7F] text-white sticky top-0 z-50 h-[60px]" x-data="{ open: false }">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between ">
+
+    <!-- Logo -->
+<div class=" top-0 left-0x">
+  <div>
+    <img src="assets/images/IntelliWise logo.png" alt="Logo" class="top-2 fixed h-[7vh] w-auto">
+  </div>
+</div>
+
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex items-center gap-4 lg:gap-8 text-sm font-medium">
+      <a href="#home" class="text-[#FFC700] underline underline-offset-[6px] decoration-[#FFC700]">Home</a>
+      <a href="#serve" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Who We Serve</a>
+      <a href="#programs" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Our Programs</a>
+      <a href="#whyus" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Why Us?</a>
+      <a href="#about" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">About Us</a>
+      <a href="#contact" class="bg-[#FFC700] text-[#392E7F] px-4 py-2 rounded-sm font-semibold hover:bg-yellow-500 transition">Connect Now</a>
+    </nav>
+
+    <!-- Mobile Hamburger -->
+    <button @click="open = !open" class="md:hidden text-white focus:outline-none" aria-label="Toggle navigation">
+      <template x-if="!open">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+        </svg>
+      </template>
+      <template x-if="open">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </template>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div x-show="open" x-cloak x-transition class="md:hidden px-4 pb-4 space-y-2 bg-[#392E7F] text-white">
+    <a href="#home" class="block text-[#FFC700] border-b border-[#FFC700] pb-1">Home</a>
+    <a href="#serve" class="block hover:text-[#FFC700]">Who We Serve</a>
+    <a href="#programs" class="block hover:text-[#FFC700]">Our Programs</a>
+    <a href="#whyus" class="block hover:text-[#FFC700]">Why Us?</a>
+    <a href="#about" class="block hover:text-[#FFC700]">About Us</a>
+    <a href="#contact" class="block bg-[#FFC700] text-[#392E7F] px-4 py-2 rounded-sm font-semibold hover:bg-yellow-500 transition">Connect Now</a>
+  </div>
+</header>
+
+
+<section id="serve" class="bg-white py-12 px-6 md:px-20">
+  <!-- Header -->
+  <div class="text-center mb-10">
+    <h2 class="text-3xl md:text-4xl font-bold text-purple-900">Cookie Policy</h2>
+  </div>
+
+  <!-- Policy Content -->
+  <div class="max-w-5xl mx-auto text-gray-800 text-base leading-relaxed space-y-6">
+    <p>
+      This Cookie Policy applies to all websites, applications, and branded pages on third-party platforms (such as Facebook and YouTube) that are operated by or on behalf of Intellidea.
+      By using Intellidea’s sites, you agree to our use of cookies as outlined in this policy. If you do not consent, you can adjust your browser settings to disable cookies. However, doing so may affect the functionality and user experience of our website.
+    </p>
+
+    <h3 class="text-xl font-semibold text-purple-800">What Are Cookies?</h3>
+    <p>
+      Cookies are small text files stored on your computer, smartphone, or tablet when you visit a website. They typically contain:
+    </p>
+    <ul class="list-disc list-inside space-y-1 ml-4">
+      <li>The name of the website they originate from</li>
+      <li>Their duration (how long they stay on your device)</li>
+      <li>A unique identifier for tracking purposes</li>
+    </ul>
+
+    <h3 class="text-xl font-semibold text-purple-800">Why Do We Use Cookies?</h3>
+    <p>At Intellidea, we use cookies to:</p>
+    <ul class="list-disc list-inside space-y-1 ml-4">
+      <li>Improve website functionality and user experience</li>
+      <li>Personalize content based on user preferences</li>
+      <li>Analyze traffic and optimize website performance</li>
+      <li>Enable social media sharing features</li>
+    </ul>
+    <p>We do not use cookies to personally identify users.</p>
+
+    <h3 class="text-xl font-semibold text-purple-800">Types of Cookies We Use</h3>
+    <ul class="list-disc list-inside space-y-1 ml-4">
+      <li><strong>Session Cookies</strong> – Active only while you browse our website and deleted when you close your browser.</li>
+      <li><strong>Persistent Cookies</strong> – Stored on your device for a set period to remember preferences and enhance future visits.</li>
+    </ul>
+    <p>You can manage or disable cookies through your browser settings, but this may limit certain website features.</p>
+
+    <h3 class="text-xl font-semibold text-purple-800">Google Analytics & Performance Tracking</h3>
+    <p>
+      We use Google Analytics to monitor website traffic and improve usability. These cookies help us analyze user behavior in an anonymous manner.
+      Google’s privacy policy can be found at: 
+      <a href="https://www.google.com/privacy_policy.html" class="text-blue-600 underline hover:text-blue-800">www.google.com/privacy_policy.html</a>
+    </p>
+  </div>
+</section>
+
+
+
+
+<footer class="bg-[#392E7F] text-gray-300 py-4 px-6">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm">
+    <div>
+      Copyright – 2025 | Intellidea Consultancy Services Pvt. Ltd.
+    </div>
+    <div class="flex space-x-6 mt-2 sm:mt-0">
+      <a href="privacy.html" class="hover:underline">Privacy Policy</a>
+      <a href="cookie.html" class="hover:underline">Cookie Policy</a>
+      <a href="terms.html" class="hover:underline">Terms & Conditions</a>
+    </div>
+  </div>
+</footer>

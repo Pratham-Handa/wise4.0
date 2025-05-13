@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/alpinejs" defer></script>
+  <!-- Add this in your <head> section -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+  <title>IntelliWise</title>
+  <style>[x-cloak] { display: none !important; }</style>
+</head>
+<body class="bg-white scroll-smooth">
+
+<!-- Header -->
+<header class="bg-[#392E7F] text-white sticky top-0 z-50 h-[60px]" x-data="{ open: false }">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between ">
+
+    <!-- Logo -->
+<div class=" top-0 left-0x">
+  <div>
+    <img src="assets/images/IntelliWise logo.png" alt="Logo" class="top-2 fixed h-[7vh] w-auto">
+  </div>
+</div>
+
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex items-center gap-4 lg:gap-8 text-sm font-medium">
+      <a href="#home" class="text-[#FFC700] underline underline-offset-[6px] decoration-[#FFC700]">Home</a>
+      <a href="#serve" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Who We Serve</a>
+      <a href="#programs" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Our Programs</a>
+      <a href="#whyus" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Why Us?</a>
+      <a href="#about" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">About Us</a>
+      <a href="#contact" class="bg-[#FFC700] text-[#392E7F] px-4 py-2 rounded-sm font-semibold hover:bg-yellow-500 transition">Connect Now</a>
+    </nav>
+
+    <!-- Mobile Hamburger -->
+    <button @click="open = !open" class="md:hidden text-white focus:outline-none" aria-label="Toggle navigation">
+      <template x-if="!open">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+        </svg>
+      </template>
+      <template x-if="open">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </template>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div x-show="open" x-cloak x-transition class="md:hidden px-4 pb-4 space-y-2 bg-[#392E7F] text-white">
+    <a href="#home" class="block text-[#FFC700] border-b border-[#FFC700] pb-1">Home</a>
+    <a href="#serve" class="block hover:text-[#FFC700]">Who We Serve</a>
+    <a href="#programs" class="block hover:text-[#FFC700]">Our Programs</a>
+    <a href="#whyus" class="block hover:text-[#FFC700]">Why Us?</a>
+    <a href="#about" class="block hover:text-[#FFC700]">About Us</a>
+    <a href="#contact" class="block bg-[#FFC700] text-[#392E7F] px-4 py-2 rounded-sm font-semibold hover:bg-yellow-500 transition">Connect Now</a>
+  </div>
+</header>
+
+<a href="https://wa.me/9082378708"
+   target="_blank"
+   class="fixed bottom-20 right-6 z-50 bg-[#29A71A] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-green-500 transition">
+  
+  <img src="assets/images/whatsapp.png" alt="WhatsApp Icon" class="w-5 h-5" />
+  <span class="hidden md:inline">Chat on WhatsApp</span>
+</a>
+
+
+
+
+<!-- Carousel Section Matching Header Width -->
+<section id="home" class="relative overflow-hidden bg-black" x-data="carousel()" x-init="init()" @mouseenter="pause()" @mouseleave="play()">
+  <div class="w-full max-w-[100%] h-[92vh]">
+    <template x-for="(video, index) in videos" :key="index">
+      <div x-show="current === index"
+           x-transition:enter="transition-opacity duration-7000"
+           x-transition:enter-start="opacity-0"
+           x-transition:enter-end="opacity-100"
+           class="w-full h-full">
+        <video :src="video" autoplay muted loop playsinline class="w-full h-full object-cover "></video>
+      </div>
+    </template>
+
+    <!-- Overlay Text & Button -->
+<div class="absolute inset-0 flex items-center justify-center z-20 text-center px-4">
+  <div class="text-white max-w-xl">
+    <template x-if="current === 0">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 drop-shadow-lg">Empowering Lifelong Learners</h2>
+        <p class="mt-4 text-sm md:text-lg font-medium">Enabling learners with industry-aligned <br> and skill-powered programs </br> </p>
+        <a href="#programs" class="inline-block mt-6 px-6 py-3 bg-yellow-400 text-purple-900 font-semibold rounded-full shadow hover:bg-yellow-500 transition">Explore Programs</a>
+      </div>
+    </template>
+
+    <template x-if="current === 1">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 drop-shadow-lg">​Lead with Impact</h2>
+        <p class="mt-4 text-md md:text-lg font-medium">​Empowering executives with leadership, image management and self transformation skills</p>
+        <a href="#programs" class="inline-block mt-6 px-6 py-3 bg-yellow-400 text-purple-900 font-semibold rounded-full shadow hover:bg-yellow-500 transition">Explore Programs</a>
+      </div>
+    </template>
+
+    <template x-if="current === 2">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 drop-shadow-lg">Future Ready Skills</h2>
+        <p class="mt-4 text-md md:text-lg font-medium">Join a transformative journey toward achieving your goals and realizing your fullest potential</p>
+        <a href="#programs" class="inline-block mt-6 px-6 py-3 bg-yellow-400 text-purple-900 font-semibold rounded-full shadow hover:bg-yellow-500 transition">Explore Programs</a>
+      </div>
+    </template>
+
+    <template x-if="current === 3">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 drop-shadow-lg">Transform Your Future</h2>
+        <p class="mt-4 text-md md:text-lg font-medium">​Whether you're a student, professional, or executive; <br>
+          IntelliWise Academy is your gateway to success </br></p>
+        <a href="#programs" class="inline-block mt-6 px-6 py-3 bg-yellow-400 text-purple-900 font-semibold rounded-full shadow hover:bg-yellow-500 transition">Explore Programs</a>
+      </div>
+    </template>
+  </div>
+</div>
+
+
+    <!-- Optional Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-30 z-10 pointer-events-none "></div>
+
+    <!-- Left Arrow -->
+<button @click="prev()" class="absolute left-4 top-[93%] md:top-1/2 transform -translate-y-1/2 bg-yellow-400 text-purple-900 hover:bg-purple-800 hover:text-white p-2 md:p-3 rounded-full shadow-lg z-20">
+  <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+  </svg>
+</button>
+
+<!-- Right Arrow -->
+<button @click="next()" class="absolute right-4 top-[93%] md:top-1/2 transform -translate-y-1/2 bg-yellow-400 text-purple-900 hover:bg-purple-800 hover:text-white p-2 md:p-3 rounded-full shadow-lg z-20">
+  <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+  </svg>
+</button>
+
+
+    <!-- Pagination -->
+    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+      <template x-for="(video, index) in videos" :key="index">
+        <button @click="goTo(index)"
+                :class="current === index ? 'bg-yellow-400' : 'bg-white'"
+                class="w-3 h-3 rounded-full border border-purple-800 transition duration-300"></button>
+      </template>
+    </div>
+  </div>
+</section>
+
+<!-- Carousel Script -->
+<script>
+  function carousel() {
+    return {
+      current: 0,
+      interval: null,
+      videos: [
+        'assets/videos/video1.mp4',
+        'assets/videos/video2.mp4',
+        'assets/videos/video3.mp4',
+        'assets/videos/Future.mp4',
+      ],
+      init() { this.play(); },
+      next() { this.current = (this.current + 1) % this.videos.length; },
+      prev() { this.current = (this.current - 1 + this.videos.length) % this.videos.length; },
+      goTo(index) { this.current = index; },
+      play() { this.interval = setInterval(() => this.next(), 5000); },
+      pause() { clearInterval(this.interval); }
+    };
+  }
+</script>
+
+<!-- Purple Top Banner -->
+<section class="bg-[#3D2C8D] text-white px-20 md:px-20 py-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-1">
+  <div>
+    <p class="text-sm md:text-base font-semibold text-yellow-400">
+      To be a global catalyst for accessible, adaptive, and purposeful learning
+    </p>
+    <p class="text-sm md:text-base mt-1">
+      IntelliWise Academy is a transformative learning ecosystem committed to empowering individuals from all walks of life - students, professionals, educators, and executives.
+    </p>
+  </div>
+<a class="text-sm md:text-base border border-yellow-400 text-white px-6 py-1 rounded hover:bg-yellow-400 hover:text-[#392E7F] transition whitespace-nowrap">
+  +91 9082378708
+</a>
+
+
+</section>
+
+<!-- Who We Serve -->
+<section id="serve" class="bg-white py-16 px-6 md:px-20">
+  <!-- Header -->
+  <div class="text-center mb-14">
+    <h2 class="text-3xl md:text-4xl font-bold text-purple-900">Who We Serve</h2>
+    <p class="text-xl text-gray-600 mt-2">Skill Development Pathways</p>
+  </div>
+
+  <!-- Cards Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+    <!-- Corporates -->
+    <div class="bg-gray-100 rounded-lg p-6 hover:shadow-lg transition">
+      <img src="assets/images/who-we-serve/1.png" alt="Corporates" class="mx-auto mb-4 h-16">
+      <h3 class="text-xl font-semibold text-purple-900">Corporates</h3>
+      <p class="text-gray-600 mt-2 text-sm line-limit-3">
+        Leadership, strategy, and business transformational programs
+      </p>
+    </div>
+
+    <!-- Academia -->
+    <div class="bg-gray-100 rounded-lg p-6 hover:shadow-lg transition">
+      <img src="assets/images/who-we-serve/2.png" alt="Academia" class="mx-auto mb-4 h-16">
+      <h3 class="text-xl font-semibold text-purple-900">Academia</h3>
+      <p class="text-gray-600 mt-2 text-sm line-limit-3">
+        Industry Relevant programs and Industry Collaboration to stay ahead
+      </p>
+    </div>
+
+    <!-- Aspiring Educators -->
+    <div class="bg-gray-100 rounded-lg p-6 hover:shadow-lg transition">
+      <img src="assets/images/who-we-serve/3.png" alt="Aspiring Educators" class="mx-auto mb-4 h-16">
+      <h3 class="text-xl font-semibold text-purple-900">Aspiring Educators</h3>
+      <p class="text-gray-600 mt-2 text-sm line-limit-3">
+        Innovative experiential methodologies to inspire and educate the next generation
+      </p>
+    </div>
+
+    <!-- Aspiring Individuals -->
+    <div class="bg-gray-100 rounded-lg p-6 hover:shadow-lg transition">
+      <img src="assets/images/who-we-serve/4.png" alt="Aspiring Individuals" class="mx-auto mb-4 h-16">
+      <h3 class="text-xl font-semibold text-purple-900">Aspiring Individuals</h3>
+      <p class="text-gray-600 mt-2 text-sm line-limit-3">
+        Expert Led training on essential life skills fostering design thinking and problem-solving  
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .line-limit-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
+
+<section class="relative w-full">
+  <img src="assets/images/who-we-serve/hero-background.JPG" alt="Speaker on Stage" class="w-full h-[100vh] object-cover object-center">
+
+  <div class="absolute top-0 left-0 p-4 md:p-10 lg:p-16">
+    <p class="text-white text-sm sm:text-base md:text-lg lg:text-xl font-medium leading-relaxed bg-black/20 p-4 md:p-6 rounded-lg shadow-md max-w-md md:max-w-xl lg:max-w-2xl">
+      Our programs are designed with industry collaboration and real-world relevance to keep learners ahead of the curve.
+      Through experiential learning and expert-led training, we build essential life skills, foster design thinking, and
+      nurture problem-solving for a rapidly changing world.
+    </p>
+  </div>
+</section>
+
+
+
+
+<!-- Our Programs -->
+<section id="programs" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-purple-900 mb-12">Our Programs</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+      <!-- Card Template -->
+      <div class="transform transition duration-300 hover:scale-105 hover:shadow-lg p-4 rounded-lg bg-white">
+        <img src="assets/images/programs/round.png" alt="Round Table Learning" class="w-full h-60 object-cover rounded mb-4 mx-auto">
+        <h3 class="text-lg font-semibold text-purple-900">Round Table Learning</h3>
+        <p class="text-sm text-gray-600 mt-1">An immersive experience to elevate effectiveness and improve quality</p>
+      </div>
+
+      <div class="transform transition duration-300 hover:scale-105 hover:shadow-lg p-4 rounded-lg bg-white">
+        <img src="assets/images/programs/ai.png" alt="Advanced Programs" class="w-full h-60 object-cover rounded mb-4 mx-auto">
+        <h3 class="text-lg font-semibold text-purple-900">Advanced Programs</h3>
+        <p class="text-sm text-gray-600 mt-1">In-depth courses providing hands-on access to design an extraordinary life</p>
+      </div>
+
+      <div class="transform transition duration-300 hover:scale-105 hover:shadow-lg p-4 rounded-lg bg-white">
+        <img src="assets/images/programs/leader.png" alt="Life Skills & Leadership" class="w-full h-60 object-cover rounded mb-4 mx-auto">
+        <h3 class="text-lg font-semibold text-purple-900">Life Skills & Leadership</h3>
+        <p class="text-sm text-gray-600 mt-1">Expand leadership capacities and make a meaningful impact</p>
+      </div>
+
+      <div class="transform transition duration-300 hover:scale-105 hover:shadow-lg p-4 rounded-lg bg-white">
+        <img src="assets/images/programs/master.png" alt="Master Class Series" class="w-full h-60 object-cover rounded mb-4 mx-auto">
+        <h3 class="text-lg font-semibold text-purple-900">Master Class Series</h3>
+        <p class="text-sm text-gray-600 mt-1">Seminars led by senior leaders for dramatic breakthroughs</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Why Us -->
+<section id="whyus" class="py-02 bg-white">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-purple-900 mb-2">Why Us?</h2>
+    <p class="text-lg md:text-xl text-purple-900 mb-8 font-medium leading-snug max-w-3xl mx-auto">
+      We enable and empower individuals from all backgrounds through transformative and outcome-driven learning.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
+      <!-- Industry Relevance -->
+      <div>
+        <img src="assets/images/why-us/1.png" alt="Industry Relevance" class="w-16 h-16 mx-auto mb-3">
+        <h3 class="text-md font-semibold text-purple-900">Industry Relevance</h3>
+        <p class="text-sm text-gray-700">Programs designed with inputs from industry experts</p>
+      </div>
+
+      <!-- Expert Led Delivery -->
+      <div>
+        <img src="assets/images/why-us/2.png" alt="Expert Led Delivery" class="w-16 h-16 mx-auto mb-3">
+        <h3 class="text-md font-semibold text-purple-900">Expert Led Delivery</h3>
+        <p class="text-sm text-gray-700">Learn from seasoned <br> professionals  </br> </p> 
+      </div>
+
+      <!-- Flexible Learning -->
+      <div>
+        <img src="assets/images/why-us/3.png" alt="Flexible Learning" class="w-16 h-16 mx-auto mb-3">
+        <h3 class="text-md font-semibold text-purple-900">Flexible Learning</h3>
+        <p class="text-sm text-gray-700">Live and self-paced modules that fit your schedule</p>
+      </div>  
+
+      <!-- Corporate Collaboration -->
+      <div>
+        <img src="assets/images/why-us/4.png" alt="Corporate Collaboration" class="w-16 h-16 mx-auto mb-3">
+        <h3 class="text-md font-semibold text-purple-900">Corporate Collaboration</h3>
+        <p class="text-sm text-gray-700">Career guidance, mentorship, networking, and collaboration</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- About Us -->
+<section id="about" class=" py-14">
+  <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-start gap-10">
+    
+    <!-- Text Section -->
+    <div class="md:w-1/2 pt-10">
+      <h2 class="text-3xl font-semibold mb-4 text-purple-900">About Us</h2>
+      <p class="text-justify">
+        IntelliWise Academy is a transformative learning ecosystem empowering individuals from different walks of life. 
+        Rooted in the holding company Intellidea’s vision of human-centric innovation, it bridges the gap between theory 
+        and practice through curated programs focused on real-world skills and continuous growth. In collaboration with 
+        academic and industry leaders, IntelliWise delivers relevant and accessible learning tailored to diverse needs 
+        equipping learners with the tools and confidence to excel.
+      </p>
+    </div>
+
+    <!-- Image Section -->
+    <div class="md:w-1/2 pt-10 pb-10">
+      <div class="bg-gray-300 w-full flex items-center justify-center rounded-lg shadow">
+        <img src="assets/images/about-us/1.png" alt="About Us Image" />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<section class="py-16 bg-white text-center">
+  <h2 class="text-4xl font-bold text-[#392E7F] mb-12">Our Founders</h2>
+
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 px-6">
+    
+    <!-- Founder 1 -->
+    <div class="flex flex-col items-center">
+      <div class="w-56 h-72 overflow-hidden rounded-[50%] mb-6">
+        <img src="assets/images/Commitee/1.png" alt="Rajnickant Patel" class="object-cover w-full h-full">
+      </div>
+      <h3 class="text-[#392E7F] font-semibold text-lg">Rajnickant Patel</h3>
+      <p class="text-purple-900 mb-2">Chairman</p>
+      <p class="text-gray-600 text-sm px-2">
+        Mr. Rajnickant Patel is a distinguished leader in the financial services sector with an illustrious.. 
+        <a href="team/1.html" class="text-blue-600 hover:underline">Read More</a>
+      </p>
+    </div>
+
+    <!-- Founder 2 -->
+    <div class="flex flex-col items-center">
+      <div class="w-56 h-72 overflow-hidden rounded-[50%] mb-6">
+        <img src="assets/images/Commitee/2.png" alt="Viresh Patel" class="object-cover w-full h-full">
+      </div>
+      <h3 class="text-[#392E7F] font-semibold text-lg">Viresh Patel</h3>
+      <p class="text-purple-900 mb-2">MD & CEO</p>
+      <p class="text-gray-600 text-sm px-2">
+        Mr. Viresh Patel is a dynamic, versatile & result-oriented growth-preneur with 25+ years of experience..
+        <a href="team/2.html" class="text-blue-600 hover:underline">Read More</a>
+      </p>
+    </div>
+
+    <!-- Founder 3 -->
+    <div class="flex flex-col items-center">
+      <div class="w-56 h-72 overflow-hidden rounded-[50%] mb-6">
+        <img src="assets/images/Commitee/3.png" alt="Jyoti Patel" class="object-cover w-full h-full">
+      </div>
+      <h3 class="text-[#392E7F] font-semibold text-lg">Jyoti Patel</h3>
+      <p class="text-purple-900 mb-2">Director</p>
+      <p class="text-gray-600 text-sm px-2">
+        Ms. Jyoti Patel is a passionate educator with over 25 years of experience in diverse roles.. 
+        <a href="team/3.html" class="text-blue-600 hover:underline">Read More</a>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="py-16 bg-white text-center">
+  <h2 class="text-4xl font-bold text-[#392E7F] mb-12">Our Advisory Board</h2>
+
+  <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-6">
+    
+    <!-- Advisor 1 -->
+    <div class="flex flex-col items-center">
+      <div class="w-56 h-72 overflow-hidden rounded-[50%] mb-6">
+        <img src="assets/images/Commitee/4.png" alt="Dr. R B Barman" class="object-cover w-full h-full">
+      </div>
+      <h3 class="text-[#392E7F] font-semibold text-lg">Dr. R B Barman</h3>
+      <p class="text-gray-600 text-sm px-2">
+        Dr. R B Barman, former Executive Director of the <br>Reserve Bank of India.. <a href="team/4.html" class="text-blue-600 hover:underline">Read More</a></br>
+        
+      </p>
+    </div>
+
+    <!-- Advisor 2 -->
+    <div class="flex flex-col items-center">
+      <div class="w-56 h-72 overflow-hidden rounded-[50%] mb-6">
+        <img src="assets/images/Commitee/5.png" alt="Sanjay Ubale" class="object-cover w-full h-full">
+      </div>
+      <h3 class="text-[#392E7F] font-semibold text-lg">Sanjay Ubale</h3>
+      <p class="text-gray-600 text-sm px-2">
+        Sanjay Ubale, a distinguished IAS officer and seasoned <br> leader with over 31 years..
+        <a href="team/5.html" class="text-blue-600 hover:underline">Read More</a> </br>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-16 bg-[#392E7F] text-white">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-start">
+    
+    <!-- Left Side: Contact Info -->
+    <div>
+      <h3 class="text-lg text-yellow-400 font-semibold mb-4">Reach out to us or learn more about our services</h3>
+
+      <div class="mb-6">
+        <p class="font-bold">Corporate Office:</p>
+        <p>Innov8, Times Square, A Wing, 4th Floor, Marol, Andheri Kurla Road,<br>Andheri East, Mumbai 400059</p>
+      </div>
+
+      <div class="mb-6">
+        <p class="font-bold">Regd. Office:</p>
+        <p>EMP 47/1903, Thakur Village, Kandivali East, Mumbai 400101</p>
+      </div>
+
+      <div class="flex items-center gap-3 mb-4">
+        <img src="assets/images/footer/phone10.png" alt="Phone" class="w-5 h-5" />
+        <span class="text-white">+91 9082 378 708</span>
+      </div>
+      <div class="flex items-center gap-3 mb-4">
+        <img src="assets/images/footer/finalm.png" alt="Email" class="w-5 h-5" />
+        <span class="text-white">inquiry@intelliwiseacademy.com</span>
+      </div>
+    </div>
+
+    <!-- Right Side: Contact Form -->
+    <div x-data="contactForm()" x-init="initialize">
+  <h3 class="text-yellow-400 font-semibold text-lg mb-4">Ready to Take Your Business to the Next Level?</h3>
+  <form @submit.prevent="submitForm" class="space-y-4">
+    <div class="grid grid-cols-2 gap-4">
+      <input type="text" name="first-name" x-model="firstName" required placeholder="First name" class="w-full p-2 bg-transparent border border-white rounded text-white placeholder-yellow-400" />
+      <input type="text" name="last-name" x-model="lastName" required placeholder="Last name" class="w-full p-2 bg-transparent border border-white rounded text-white placeholder-yellow-400" />
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <input type="email" name="email" x-model="email" required placeholder="Email" class="w-full p-2 bg-transparent border border-white rounded text-white placeholder-yellow-400" />
+      <input id="whatsapp" name="whatsapp" type="tel" x-model="whatsapp" required placeholder="WhatsApp Number" class="w-full p-2 bg-transparent border border-white rounded text-white placeholder-yellow-400" />
+    </div>
+    <textarea name="message" x-model="message" required rows="4" placeholder="Message" class="w-full p-2 bg-transparent border border-white rounded text-white placeholder-yellow-400"></textarea>
+    <button type="submit" class="border border-yellow-400 text-yellow-400 px-6 py-2 rounded-full hover:bg-yellow-400 hover:text-[#392E7F] transition duration-300">Submit</button>
+  </form>
+</div>
+
+<script>
+  function contactForm() {
+    return {
+      firstName: '',
+      lastName: '',
+      email: '',
+      whatsapp: '',
+      message: '',
+
+      async submitForm() {
+        const formData = new FormData();
+        formData.append('first-name', this.firstName);
+        formData.append('last-name', this.lastName);
+        formData.append('email', this.email);
+        formData.append('whatsapp', this.whatsapp);
+        formData.append('message', this.message);
+
+        try {
+          const response = await fetch('submit-form.php', {
+            method: 'POST',
+            body: formData
+          });
+          
+          if (response.ok) {
+            alert('Thank you for your inquiry! We will get back to you soon.');
+            this.firstName = this.lastName = this.email = this.whatsapp = this.message = ''; // Reset the form fields
+          } else {
+            alert('There was an error sending your message. Please try again later.');
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          alert('There was an error sending your message. Please try again later.');
+        }
+      }
+    }
+  }
+</script>
+
+
+
+
+      <script>
+  const input = document.querySelector("#whatsapp");
+  window.intlTelInput(input, {
+    initialCountry: "auto",
+    geoIpLookup: function (callback) {
+      fetch('https://ipapi.co/json')
+        .then(res => res.json())
+        .then(data => callback(data.country_code))
+        .catch(() => callback('US'));
+    },
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+  });
+</script>
+
+<style>
+    /* Set the text color to black */
+    #whatsapp {
+      color: black !important;
+    }
+
+    /* Set the text color of the country code and other elements to black */
+    .iti__country, .iti__selected-flag, .iti__dial-code {
+      color: black !important;
+    }
+
+    /* Ensure the placeholder text is also black */
+    #whatsapp::placeholder {
+      color: color-mix(in srgb, text-yellow-400) !important;
+    }
+
+    /* Optional: Modify background color and borders */
+    #whatsapp, .iti__selected-flag, .iti__dial-code {
+      background-color: transparent !important;
+      border-color: white !important;
+    }
+
+    .iti__flag-container {
+      background-color: transparent !important;
+    }
+  </style>
+
+
+    </div>
+
+  </div>
+</section>
+
+
+<footer class="bg-[#392E7F] text-gray-300 py-4 px-6">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm">
+    <div>
+      Copyright – 2025 | Intellidea Consultancy Services Pvt. Ltd.
+    </div>
+    <div class="flex space-x-6 mt-2 sm:mt-0">
+      <a href="privacy.html" class="hover:underline">Privacy Policy</a>
+      <a href="cookie.html" class="hover:underline">Cookie Policy</a>
+      <a href="terms.html" class="hover:underline">Terms & Conditions</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
