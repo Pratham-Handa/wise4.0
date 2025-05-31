@@ -10,7 +10,57 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
   <title>IntelliWise</title>
-  <style>[x-cloak] { display: none !important; }</style>
+  <style>
+    [x-cloak] { display: none !important; }
+    
+    /* Health2Wealth Summit Popup Styles */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    .popup-overlay {
+      backdrop-filter: blur(8px);
+    }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #4527A0 0%, #7E57C2 100%);
+    }
+    
+    .floating-button {
+      position: fixed;
+      bottom: 80px; /* Positioned above WhatsApp button */
+      right: 20px;
+      z-index: 40;
+      box-shadow: 0 10px 25px rgba(69, 39, 160, 0.3);
+    }
+    
+    @media (max-width: 768px) {
+      .floating-button {
+        bottom: 80px; /* Keep above WhatsApp on mobile too */
+        left: 15px;
+        right: 15px;
+      }
+    }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            corporate: {
+              purple: '#392E7F',
+              'purple-dark': '##392E7F',
+              'purple-light': '#7E57C2',
+              yellow: '#F9C100',
+              'yellow-dark': '#F9C100',
+            }
+          },
+          fontFamily: {
+            'sans': ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
 </head>
 <body class="bg-white scroll-smooth">
 
@@ -30,6 +80,7 @@
       <a href="#programs" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Our Programs</a>
       <a href="#whyus" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Why Us?</a>
       <a href="#about" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">About Us</a>
+      <a href="#events" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Events</a>
       <a href="#contact" class="bg-[#FFC700] text-[#392E7F] px-4 py-2 rounded-sm font-semibold hover:bg-yellow-500 transition">Connect Now</a>
     </nav>
 
@@ -55,19 +106,473 @@
     <a href="#programs" class="block hover:text-[#FFC700]">Our Programs</a>
     <a href="#whyus" class="block hover:text-[#FFC700]">Why Us?</a>
     <a href="#about" class="block hover:text-[#FFC700]">About Us</a>
+    <a href="#events" class="block hover:text-[#FFC700]">Events</a>
     <a href="#contact" class="block bg-[#FFC700] text-[#392E7F] px-4 py-2 rounded-sm font-semibold hover:bg-yellow-500 transition">Connect Now</a>
   </div>
 </header>
 
-
+<!-- WhatsApp Button -->
 <a href="https://wa.me/9082378708"
    target="_blank"
-   class="fixed bottom-20 right-6 z-50 bg-[#29A71A] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-green-500 transition">
+   class="fixed bottom-6 right-6 z-50 bg-[#29A71A] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-green-500 transition">
   
   <img src="assets/images/whatsapp.png" alt="WhatsApp Icon" class="w-5 h-5" />
   <span class="hidden md:inline">Chat on WhatsApp</span>
 </a>
 
+<!-- Health2Wealth Summit Popup Component -->
+<div x-data="{ 
+    showPopup: true,
+    hasBeenClosed: false,
+    currentSpeaker: 0,
+    speakers: [
+        {
+            name: 'Rajeev Agarwal',
+            title: 'Former Whole-Time Member, SEBI & IRS Officer',
+            image: 'assets/images/h2wspeakers/Rajeev.png'
+        },
+        {
+            name: 'Kamala Kantharaj',
+            title: 'Chief Regulatory Officer, BSE',
+            image: 'assets/images/h2wspeakers/Kamala.png'
+        },
+        {
+            name: 'Deena Mehta',
+            title: 'Former President & First Woman Member, BSE',
+            image: 'assets/images/h2wspeakers/Deena.png'
+        },
+        {
+            name: 'Vinod Saini',
+            title: 'Holistic Health & Spiritual Wellness Expert',
+            image: 'assets/images/h2wspeakers/Vinod.png'
+        },
+        {
+            name: 'Dr. Geeta Narayan',
+            title: 'Senior Academician & Mentor, Emotional Intelligence Expert',
+            image: 'assets/images/h2wspeakers/Geeta.png'
+        },
+        {
+            name: 'Dr. Manoj Vaish',
+            title: 'Former ED & CEO, BSE; Finance Leader',
+            image: 'assets/images/h2wspeakers/Manoj.png'
+        },
+        {
+            name: 'Nilesh Vikamsey',
+            title: 'Past President ICAI & Chartered Accountant',
+            image: 'assets/images/h2wspeakers/Nilesh.png'
+        },
+        {
+            name: 'Navin Agarwal',
+            title: 'CFO, Dream11 & Financial Governance Expert',
+            image: 'assets/images/h2wspeakers/Navin.png'
+        }
+    ],
+    closePopup() {
+        this.showPopup = false;
+        this.hasBeenClosed = true;
+    },
+    nextSpeaker() {
+        this.currentSpeaker = (this.currentSpeaker + 1) % this.speakers.length;
+    },
+    prevSpeaker() {
+        this.currentSpeaker = this.currentSpeaker === 0 ? this.speakers.length - 1 : this.currentSpeaker - 1;
+    },
+    startAutoAdvance() {
+        setInterval(() => {
+            if (this.showPopup) {
+                this.nextSpeaker();
+            }
+        }, 5000);
+    }
+}" x-init="startAutoAdvance()">
+
+
+    <!-- Floating Trigger Button (shows after popup is closed) -->
+<div x-show="hasBeenClosed && !showPopup" 
+     x-transition:enter="transition ease-out duration-300"
+     x-transition:enter-start="opacity-0 transform translate-y-4"
+     x-transition:enter-end="opacity-100 transform translate-y-0">
+  
+  <button 
+      @click="showPopup = true"
+      class="fixed bottom-20 right-6 z-50 bg-gradient-to-r from-purple-700 to-purple-500 text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:from-purple-800 hover:to-purple-600 transition duration-300 ease-in-out">
+      
+      <img src="assets/images/check.png" alt="Alert Icon" class="w-5 h-5" />
+      <span class="hidden md:inline text-sm md:text-base font-medium">Health2Wealth Summit 2025</span>
+  </button>
+</div>
+
+
+    <!-- Popup Overlay -->
+    <div 
+        x-show="showPopup" 
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        class="fixed inset-0 z-50 flex items-center justify-center p-2 md:p-4 popup-overlay bg-black/70"
+        x-cloak>
+        
+        <!-- Popup Content -->
+        <div 
+            @click.away="closePopup()"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform scale-95"
+            x-transition:enter-end="opacity-100 transform scale-100"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100 transform scale-100"
+            x-transition:leave-end="opacity-0 transform scale-95"
+            class="relative bg-white rounded-xl md:rounded-2xl shadow-2xl w-full max-w-7xl h-[95vh] md:h-[90vh] overflow-hidden"
+            x-cloak>
+            
+            <!-- Close Button -->
+            <button 
+                @click="closePopup()" 
+                class="absolute top-3 right-3 md:top-6 md:right-6 text-white hover:text-corporate-yellow z-20 bg-black/20 rounded-full p-2 backdrop-blur-sm transition duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            
+            <!-- Mobile Layout (Stacked) -->
+            <div class="block md:hidden h-full overflow-y-auto">
+                
+                <!-- Mobile Header Section -->
+                <div class="gradient-bg text-white p-6 relative overflow-hidden">
+                    <!-- Background Pattern -->
+                    <div class="absolute inset-0 opacity-10">
+                        <div class="absolute top-5 right-5 w-20 h-20 border border-white/30 rounded-full"></div>
+                        <div class="absolute bottom-10 left-5 w-16 h-16 border border-white/30 rounded-full"></div>
+                    </div>
+                    
+                    <div class="relative z-10">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-corporate-yellow text-black px-2 py-1 rounded-full text-xs font-semibold mr-2">
+                                EXCLUSIVE
+                            </div>
+                            <div class="text-corporate-yellow text-xs font-medium">
+                                IntelliWise Academy × Intellidea
+                            </div>
+                        </div>
+                        
+                        <h1 class="text-3xl font-bold mb-2 leading-tight">
+                            Health2Wealth<br>
+                            <span class="text-corporate-yellow">Summit 2025</span>
+                        </h1>
+                        
+                        <p class="text-lg text-corporate-yellow italic font-medium mb-4">
+                            Pathway to Prosperity
+                        </p>
+                        
+                        <p class="text-sm mb-6 text-white/90 leading-relaxed">
+                            A pioneering summit connecting health and finance for holistic wellness.
+                        </p>
+                        
+                        <!-- Mobile Event Details -->
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center">
+                                <div class="bg-corporate-yellow/20 p-2 rounded-lg mr-3">
+                                    <a href="https://maps.app.goo.gl/PTXfWT7VHt7cbHJ68" target="_blank" rel="noopener noreferrer">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-corporate-yellow hover:scale-110 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+  </svg>
+</a>
+
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-sm">BSE Mumbai</div>
+                                    <div class="text-xs text-white/80">Bombay Stock Exchange</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="bg-corporate-yellow/20 p-2 rounded-lg mr-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-corporate-yellow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-sm">14 June 2025</div>
+                                    <div class="text-xs text-white/80">9:15 AM - 1:30 PM</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Mobile CTA Buttons -->
+<div class="flex flex-col gap-[1rem]">
+  <a href="https://forms.gle/SieEB2iwb4mADjD49" target="_blank" rel="noopener noreferrer">
+    <button class="bg-corporate-yellow hover:bg-corporate-yellow-dark text-black font-bold py-3 px-6 rounded-xl shadow-lg transition duration-300 transform hover:scale-105 w-full">
+        <span class="text-sm">Register Now!</span>
+    </button>
+    </a>
+
+    <a href="event.html">
+    <button class="bg-corporate-yellow hover:bg-corporate-yellow-dark text-black font-bold py-3 px-6 rounded-xl shadow-lg transition duration-300 transform hover:scale-105 w-full">
+        <span class="text-sm">Know More!</span>
+    </button>
+    </a>
+</div>
+
+                    </div>
+                </div>
+                
+                <!-- Mobile Why Attend & Speakers -->
+                <div class="p-6 bg-white">
+                    <!-- Why Attend -->
+                    <div class="mb-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3">Why Attend?</h3>
+                        <div class="grid grid-cols-2 gap-3 text-sm">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-corporate-purple rounded-full mr-2"></div>
+                                <span>Industry Experts</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-corporate-purple rounded-full mr-2"></div>
+                                <span>HNI Networking</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-corporate-purple rounded-full mr-2"></div>
+                                <span>Practical Strategies</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-corporate-purple rounded-full mr-2"></div>
+                                <span>Wellness Plans</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Speakers Carousel -->
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-lg font-bold text-gray-800">Our Speakers</h3>
+                            <div class="flex space-x-2">
+                                <button @click="prevSpeaker()" class="p-1 rounded-full bg-gray-200 hover:bg-corporate-purple hover:text-white transition duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                                    </svg>
+                                </button>
+                                <button @click="nextSpeaker()" class="p-1 rounded-full bg-gray-200 hover:bg-corporate-purple hover:text-white transition duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Mobile Speaker Display -->
+                        <div class="bg-gray-50 rounded-xl p-4 h-28">
+                            <template x-for="(speaker, index) in speakers" :key="index">
+                                <div x-show="currentSpeaker === index" x-transition class="flex items-center h-full">
+                                    <img :src="speaker.image" :alt="speaker.name" class="w-14 h-14 rounded-full object-cover border-2 border-corporate-purple mr-3">
+                                    <div class="flex-1">
+                                        <h4 class="font-bold text-gray-800 text-sm" x-text="speaker.name"></h4>
+                                        <p class="text-xs text-gray-600 mb-2" x-text="speaker.title"></p>
+                                        <div class="flex space-x-1">
+                                            <template x-for="(_, i) in speakers" :key="i">
+                                                <div class="w-1.5 h-1.5 rounded-full transition duration-300" :class="currentSpeaker === i ? 'bg-corporate-purple' : 'bg-gray-300'"></div>
+                                            </template>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Desktop Layout (Side by Side) -->
+            <div class="hidden md:grid grid-cols-12 h-full">
+                
+                <!-- Desktop Left Section -->
+                <div class="col-span-7 gradient-bg text-white p-8 flex flex-col justify-between relative overflow-hidden">
+                    <!-- Background Pattern -->
+                    <div class="absolute inset-0 opacity-10">
+                        <div class="absolute top-10 right-10 w-32 h-32 border border-white/30 rounded-full"></div>
+                        <div class="absolute bottom-20 left-10 w-24 h-24 border border-white/30 rounded-full"></div>
+                        <div class="absolute top-1/2 left-1/4 w-16 h-16 border border-white/30 rounded-full"></div>
+                    </div>
+                    
+                    
+                    <!-- Header -->
+                    <div class="relative z-10">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-corporate-yellow text-black px-3 py-1 rounded-full text-sm font-semibold mr-3">
+                                EXCLUSIVE
+                            </div>
+                            <div class="text-corporate-yellow text-sm font-medium">
+                                IntelliWise Academy × Intellidea
+                            </div>
+                        </div>
+                        
+                        <h1 class="text-4xl lg:text-5xl font-bold mb-3 leading-tight">
+                            Health2Wealth<br>
+                            <span class="text-corporate-yellow">Summit 2025</span>
+                        </h1>
+
+                        <p class="text-xl lg:text-2xl text-corporate-yellow italic font-medium mb-6">
+                            Pathway to Prosperity
+                        </p>
+                        
+                        <p class="text-lg mb-2 text-white/90 leading-relaxed">
+  A pioneering summit connecting health and finance for holistic wellness. 
+  Explore the convergence of health and wealth for unprecedented growth.
+</p>
+
+<div class="flex items-start gap-[13rem]">
+  <!-- First Image Container -->
+<div class="w-[200px] h-[100px] overflow-hidden flex items-center justify-center p-0 mb-2 mt-0 rounded-lg bg-white">
+  <img src="assets/images/BSE.jpg" alt="Bombay Stock Exchange" class="object-contain max-w-full max-h-full m-0 p-0" />
+</div>
+
+
+<!-- Second Image Container -->
+<div class="w-[200px] h-[100px] overflow-hidden flex items-center justify-center p-0 mt-0 rounded-lg bg-white">
+  <img src="assets/images/h2wlogo.png" alt="Second Image" class="max-w-full max-h-full scale-90 object-contain m-0 p-0" />
+</div>
+
+
+</div>
+
+
+
+
+
+
+                    </div>
+                    
+                    <!-- Event Details -->
+                    <div class="relative z-10 space-y-4">
+                        <div class="grid grid-cols-2 gap-[12rem]">
+                            <div class="flex items-center">
+                                <div class="bg-corporate-yellow/20 p-2 rounded-lg mr-3">
+                                    <a href="https://maps.app.goo.gl/PTXfWT7VHt7cbHJ68" target="_blank" rel="noopener noreferrer">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-corporate-yellow hover:scale-110 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+  </svg>
+</a>
+
+                                </div>
+                                <div>
+                                    <div class="font-semibold">BSE Mumbai</div>
+                                    <div class="text-sm text-white/80">Bombay Stock Exchange</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center ">
+                                <div class="bg-corporate-yellow/20 p-2 rounded-lg mr-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-corporate-yellow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">14 June 2025</div>
+                                    <div class="text-sm text-white/80">9:15 AM - 1:30 PM</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- CTA Button -->
+                        <div class="pt-4">
+  <div class="flex flex-col lg:flex-row gap-[15rem]">
+    <a href="https://forms.gle/SieEB2iwb4mADjD49" target="_blank" rel="noopener noreferrer">
+    <button class="bg-corporate-yellow hover:bg-corporate-yellow-dark text-black font-bold py-4 px-8 rounded-xl shadow-lg transition duration-300 transform hover:scale-105 w-full lg:w-auto">
+      <span class="text-lg">Register Now!</span>
+    </button>
+    </a>
+
+    <a href="event.html"> 
+    <button class="bg-corporate-yellow hover:bg-corporate-yellow-dark text-black font-bold py-4 px-8 rounded-xl shadow-lg transition duration-300 transform hover:scale-105 w-full lg:w-auto">
+      <span class="text-lg">Know More!</span>
+    </button>
+    </a>
+  </div>
+</div>
+
+                    </div>
+                </div>
+                
+                <!-- Desktop Right Section -->
+                <div class="col-span-5 bg-white flex flex-col">
+                    
+                    <!-- Hero Image Section -->
+                    <div class="h-90 bg-grey">
+  <img src="assets/images/h2wgen.png" alt="Professional Wellness" class="w-full h-full object-cover rounded-none">
+</div>
+
+                    
+                    <!-- Why Attend & Speakers Section -->
+                    <div class="h-1/2 p-6 flex flex-col">
+                        
+                        <!-- Why Attend -->
+                        <div class="mb-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Why Attend?</h3>
+                            <div class="grid grid-cols-2 gap-3 text-sm">
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-corporate-purple rounded-full mr-2"></div>
+                                    <span>Industry Experts</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-corporate-purple rounded-full mr-2"></div>
+                                    <span>HNI Networking</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-corporate-purple rounded-full mr-2"></div>
+                                    <span>Practical Strategies</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-corporate-purple rounded-full mr-2"></div>
+                                    <span>Wellness Plans</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Speakers Carousel -->
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-xl font-bold text-gray-800">Our Speakers</h3>
+                                <div class="flex space-x-2">
+                                    <button @click="prevSpeaker()" class="p-1 rounded-full bg-gray-200 hover:bg-corporate-purple hover:text-white transition duration-300">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                                        </svg>
+                                    </button>
+                                    <button @click="nextSpeaker()" class="p-1 rounded-full bg-gray-200 hover:bg-corporate-purple hover:text-white transition duration-300">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Speaker Display -->
+                            <div class="bg-gray-50 rounded-xl p-4 h-32">
+                                <template x-for="(speaker, index) in speakers" :key="index">
+                                    <div x-show="currentSpeaker === index" x-transition class="flex items-center h-full">
+                                        <img :src="speaker.image" :alt="speaker.name" class="w-16 h-16 rounded-full object-cover border-2 border-corporate-purple mr-4">
+                                        <div class="flex-1">
+                                            <h4 class="font-bold text-gray-800 text-sm" x-text="speaker.name"></h4>
+                                            <p class="text-xs text-gray-600 mb-2" x-text="speaker.title"></p>
+                                            <div class="flex space-x-1">
+                                                <template x-for="(_, i) in speakers" :key="i">
+                                                    <div class="w-1.5 h-1.5 rounded-full transition duration-300" :class="currentSpeaker === i ? 'bg-corporate-purple' : 'bg-gray-300'"></div>
+                                                </template>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
@@ -373,6 +878,59 @@
 
   </div>
 </section>
+
+
+<!-- Events Section -->
+<section id="events" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-purple-900 mb-12">Upcoming Events</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+      
+      <!-- Featured Event -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition hover:scale-105">
+        <img src="assets/images/h2wlogo.png " alt="Health2Wealth Summit" class="w-full h-52 object-cover">
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-semibold text-purple-800 mb-2">Health2Wealth Summit 2025</h3>
+          <p class="text-gray-600 mb-4">Join industry leaders for a transformative journey on financial wellness, health, and leadership growth.</p>
+          <a href="event.html" class="inline-block px-5 py-2 rounded-lg transition" style="background-color: #F9C100; color: #392E7F;">
+            View Event
+          </a>
+        </div>
+      </div>
+
+      <!-- Coming Soon Event 1 -->
+      <div class="relative bg-white rounded-xl shadow-md overflow-hidden h-full">
+        <div class="w-full h-52 overflow-hidden relative">
+          <img src="assets/images/programs/ai.png" alt="Coming Soon" class="w-full h-full object-cover filter blur-md brightness-75">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="text-yellow-400 shadow-lg text-xl font-semibold">Coming Soon</span>
+          </div>
+        </div>
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-semibold text-purple-800 mb-1">Stay Tuned for more information</h3>
+          <p class="text-gray-500 text-center justify-center text-sm"></p>
+        </div>
+      </div>
+
+      <!-- Coming Soon Event 2 -->
+      <div class="relative bg-white rounded-xl shadow-md overflow-hidden h-full">
+        <div class="w-full h-52 overflow-hidden relative">
+          <img src="assets/images/programs/leader.png" alt="Coming Soon" class="w-full h-full object-cover filter blur-md brightness-75">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="text-yellow-400 text-xl shadow-2xl font-semibold">Coming Soon</span>
+          </div>
+        </div>
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-semibold text-purple-800 mb-1">Contact us!</h3>
+          <p class="text-gray-500 text-sm">Exciting new experiences await.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 
 

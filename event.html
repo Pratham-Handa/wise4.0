@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/alpinejs" defer></script>
+  <!-- Add this in your <head> section -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+  <title>Health2Wealth Summit 2025</title>
+  <style>
+    .bg-gradient-purple {
+      background: linear-gradient(135deg, #392E7F 0%, #5946c0 100%);
+    }
+    .text-purple {
+      color: #392E7F;
+    }
+    .bg-yellow {
+      background-color: #F9C100;
+    }
+  </style>
+
+   <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            corporate: {
+              purple: '#392E7F',
+              'purple-dark': '##392E7F',
+              'purple-light': '#7E57C2',
+              yellow: '#F9C100',
+              'yellow-dark': '#F9C100',
+            }
+          },
+          fontFamily: {
+            'sans': ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+
+
+
+<body class="font-sans text-gray-800 bg-gradient-purple">
+
+<!-- Header -->
+<header class="bg-[#392E7F] text-white sticky top-0 z-50 h-[60px]" x-data="{ open: false }">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+
+    <!-- Logo -->
+    <div class="flex-shrink-0">
+      <img src="assets/images/IntelliWise logo.png" alt="Logo" class="h-[40px] w-auto">
+    </div>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex items-center gap-4 lg:gap-8 text-sm font-medium">
+      <a href="./index.html#home" class="text-[#FFC700] underline underline-offset-[6px] decoration-[#FFC700]">Home</a>
+      <a href="./index.html#serve" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Who We Serve</a>
+      <a href="./index.html#programs" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Our Programs</a>
+      <a href="./index.html#whyus" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Why Us?</a>
+      <a href="./index.html#about" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">About Us</a>
+      <a href="./index.html#events" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Events</a>
+      <a href="./index.html#contact" class="bg-[#FFC700] text-[#392E7F] px-4 py-2 rounded-sm font-semibold hover:bg-yellow-500 transition">Connect Now</a>
+    </nav>
+
+    <!-- Mobile Hamburger -->
+    <button @click="open = !open" class="md:hidden text-white focus:outline-none" aria-label="Toggle navigation">
+      <template x-if="!open">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+        </svg>
+      </template>
+      <template x-if="open">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </template>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div x-show="open" x-cloak x-transition class="md:hidden px-4 pb-4 space-y-2 bg-[#392E7F] text-white">
+    <a href="./index.html#home" class="block text-[#FFC700] border-b border-[#FFC700] pb-1">Home</a>
+    <a href="./index.html#serve" class="block hover:text-[#FFC700]">Who We Serve</a>
+    <a href="./index.html#programs" class="block hover:text-[#FFC700]">Our Programs</a>
+    <a href="./index.html#whyus" class="block hover:text-[#FFC700]">Why Us?</a>
+    <a href="./index.html#about" class="block hover:text-[#FFC700]">About Us</a>
+    <a href="./index.html#events" class="block hover:text-[#FFC700]">Events</a>
+    <a href="./index.html#contact" class="block bg-[#FFC700] text-[#392E7F] px-4 py-2 rounded-sm font-semibold hover:bg-yellow-500 transition">Connect Now</a>
+  </div>
+</header>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/9082378708"
+   target="_blank"
+   class="fixed bottom-6 right-6 z-50 bg-[#29A71A] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-green-500 transition">
+  
+  <img src="assets/images/whatsapp.png" alt="WhatsApp Icon" class="w-5 h-5" />
+  <span class="hidden md:inline">Chat on WhatsApp</span>
+</a>
+  
+
+
+<!-- Hero Section -->
+<section class="bg-[#392E7F] text-white py-16 px-6 lg:px-20">
+  <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center">
+    
+    <!-- Left Content -->
+    <div class="max-w-2xl">
+      <div class="flex items-center mb-4">
+        <div class="bg-yellow text-black px-3 py-1 rounded-full text-sm font-semibold mr-3">
+          EXCLUSIVE
+        </div>
+        <div class="text-corporate-yellow text-sm font-medium">
+          IntelliWise Academy × Intellidea
+        </div>
+      </div>
+
+      <h1 class="text-5xl font-bold mb-3 leading-tight">
+        Health2Wealth<br>
+        <span class="text-corporate-yellow">Summit 2025</span>
+      </h1>
+
+      <p class="text-2xl text-corporate-yellow italic font-medium mb-6">
+        Pathway to Prosperity
+      </p>
+
+      <p class="text-lg text-white/90 mb-8 leading-relaxed">
+        A pioneering summit connecting health and finance for holistic wellness. </br>
+        Explore the convergence of health and wealth for unprecedented growth.
+      </p>
+
+      <!-- Register Button -->
+      <a href="https://forms.gle/SieEB2iwb4mADjD49" target="_blank" rel="noopener noreferrer" class="inline-block bg-yellow text-black font-bold px-6 py-3 rounded-lg shadow-md hover:bg-yellow-600 transition duration-300">
+        Register Now
+      </a>
+
+      <!-- Ticket Info -->
+      <p class="text-white mt-4">Each ticket is priced at ₹3,499 + GST.</p>
+      <p class="text-white text-sm mt-1">* <strong>Terms & Conditions:</strong> All ticket sales are final and non-refundable.</p>
+    </div>
+
+    <!-- Right Partner Logos in 2x2 Grid -->
+    <div class="mt-10 lg:mt-0 lg:ml-10 grid grid-cols-2 gap-6">
+      <img src="assets/images/IntelliWise logo.png" alt="Partner 1" class="w-32 h-auto object-contain" />
+      <img src="assets/images/intellidea.png" alt="Partner 2" class="w-32 h-auto object-contain" />
+      <img src="assets/images/BSE.jpg" alt="Partner 3" class="w-32 h-auto object-contain" />
+      <img src="assets/images/h2wlogo.png" alt="Partner 4" class="w-32 h-auto bg-white object-contain" />
+    </div>
+
+  </div>
+</section>
+
+
+    <section class="py-16 bg-white text-center">
+    <h2 class="text-4xl font-bold text-[#392E7F] mb-12">Key Speakers & Panelists</h2>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 px-6">
+
+      <!-- Speaker 1 -->
+      <div class="flex flex-col items-center">
+        <div class="w-56 h-72 overflow-hidden rounded-[50%] mb-6">
+          <img src="assets/images/h2wspeakers/Rajeev.png" alt="Rajeev Agarwal" class="object-cover w-full h-full">
+        </div>
+        <h3 class="text-[#392E7F] font-semibold text-lg">Rajeev Agarwal</h3>
+        <p class="text-purple-900 mb-2">Former Whole-Time Member, SEBI & IRS Officer</p>
+      </div>
+
+      <!-- Speaker 2 -->
+      <div class="flex flex-col items-center">
+        <div class="w-56 h-72 overflow-hidden rounded-[50%] mb-6">
+          <img src="assets/images/h2wspeakers/Kamala.png" alt="Kamala Kantharaj" class="object-cover w-full h-full">
+        </div>
+        <h3 class="text-[#392E7F] font-semibold text-lg">Kamala Kantharaj</h3>
+        <p class="text-purple-900 mb-2">Chief Regulatory Officer, BSE</p>
+      </div>
+
+      <!-- Speaker 3 -->
+      <div class="flex flex-col items-center">
+        <div class="w-56 h-72 overflow-hidden rounded-[50%] mb-6">
+          <img src="assets/images/h2wspeakers/Deena.png" alt="Deena Mehta" class="object-cover w-full h-full">
+        </div>
+        <h3 class="text-[#392E7F] font-semibold text-lg">Deena Mehta</h3>
+        <p class="text-purple-900 mb-2">Former President & First Woman Member, BSE</p>
+      </div>
+
+      <!-- Speaker 4 -->
+      <div class="flex flex-col items-center">
+        <div class="w-56 h-72 overflow-hidden rounded-[50%] mb-6">
+          <img src="assets/images/h2wspeakers/Vinod.png" alt="Vinod Saini" class="object-cover w-full h-full">
+        </div>
+        <h3 class="text-[#392E7F] font-semibold text-lg">Vinod Saini</h3>
+        <p class="text-purple-900 mb-2">Holistic Health & Spiritual Wellness Expert</p>
+      </div>
+
+      <!-- Speaker 5 -->
+      <div class="flex flex-col items-center">
+        <div class="w-56 h-72 overflow-hidden rounded-[50%] mb-6">
+          <img src="assets/images/h2wspeakers/Geeta.png" alt="Dr. Geeta Narayan" class="object-cover w-full h-full">
+        </div>
+        <h3 class="text-[#392E7F] font-semibold text-lg">Dr. Geeta Narayan</h3>
+        <p class="text-purple-900 mb-2">Senior Academician & Mentor, Emotional Intelligence Expert</p>
+      </div>
+
+      <!-- Speaker 6 -->
+      <div class="flex flex-col items-center">
+        <div class="w-56 h-72 overflow-hidden rounded-[50%] mb-6">
+          <img src="assets/images/h2wspeakers/Manoj.png" alt="Dr. Manoj Vaish" class="object-cover w-full h-full">
+        </div>
+        <h3 class="text-[#392E7F] font-semibold text-lg">Dr. Manoj Vaish</h3>
+        <p class="text-purple-900 mb-2">Former ED & CEO, BSE; Finance Leader</p>
+      </div>
+
+      <!-- Speaker 7 -->
+      <div class="flex flex-col items-center">
+        <div class="w-56 h-72 overflow-hidden rounded-[50%] mb-6">
+          <img src="assets/images/h2wspeakers/Nilesh.png" alt="Nilesh Vikamsey" class="object-cover w-full h-full">
+        </div>
+        <h3 class="text-[#392E7F] font-semibold text-lg">Nilesh Vikamsey</h3>
+        <p class="text-purple-900 mb-2">Past President ICAI & Chartered Accountant</p>
+      </div>
+
+      <!-- Speaker 8 -->
+      <div class="flex flex-col items-center">
+        <div class="w-56 h-72 overflow-hidden rounded-[50%] mb-6">
+          <img src="assets/images/h2wspeakers/Navin.png" alt="Navin Agarwal" class="object-cover w-full h-full">
+        </div>
+        <h3 class="text-[#392E7F] font-semibold text-lg">Navin Agarwal</h3>
+        <p class="text-purple-900 mb-2">CFO, Dream11 & Financial Governance Expert</p>
+      </div>
+
+  </div>
+</section>
+
+
+  <!-- About Section -->
+  <section class="bg-white text-gray-800 py-16 px-6 lg:px-20">
+    <h2 class="text-3xl font-bold mb-10 text-center text-purple">About the Event</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+      <div>
+        <img src="assets/icons/summit.svg" alt="Summit Icon" class="mx-auto mb-4 w-12 h-12">
+        <h3 class="font-semibold text-lg mb-2">Pioneering Summit</h3>
+        <p>Connects health and finance for holistic wellness.</p>
+      </div>
+      <div>
+        <img src="assets/icons/objective.svg" alt="Objective Icon" class="mx-auto mb-4 w-12 h-12">
+        <h3 class="font-semibold text-lg mb-2">Summit Objective</h3>
+        <p>Explore health and wealth convergence for growth.</p>
+      </div>
+      <div>
+        <img src="assets/icons/attendees.svg" alt="Attendees Icon" class="mx-auto mb-4 w-12 h-12">
+        <h3 class="font-semibold text-lg mb-2">Key Attendees</h3>
+        <p>Industry Experts, HNIs, Executives & Senior Professionals.</p>
+      </div>
+    </div>
+    <div class="mt-12 text-center">
+      <img src="assets/images/BSE.jpg" alt="BSE Venue" class="mx-auto w-32 h-auto rounded-xl shadow-lg mb-4">
+      <h3 class="font-semibold text-lg">Iconic Venue</h3>
+      <p>Hosted at BSE, Mumbai – Wealth Creator for 150 years</p>
+    </div>
+  </section>
+
+  <!-- Purpose Section -->
+<section class="bg-[#392E7F] text-white py-16 px-6 lg:px-20">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+    
+    <!-- Left Column: Purpose & Unique Value -->
+    <div>
+      <h2 class="text-2xl font-bold mb-8 text-[#F9C100]">Purpose & Unique Value</h2>
+      <p class="text-lg mb-6">
+        A <span class="font-semibold">Summit</span> focused on enabling and empowering individuals at all levels.
+      </p>
+      <div class="space-y-6 text-md">
+        <div>
+          <h3 class="font-bold text-white mb-2">Objective:</h3>
+          <p>Equip participants with practical strategies to thrive professionally and personally.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-white mb-2">Why it matters:</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Essential in today’s fast-paced work environment</li>
+            <li>Helps boost <span class="font-semibold">productivity</span>, <span class="font-semibold">focus</span>, and <span class="font-semibold">job satisfaction</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-white mb-2">What to expect:</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Explore <span class="font-semibold">actionable techniques</span></li>
+            <li>Create <span class="font-semibold">personalised well-being plans</span> for lasting success</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+<!-- Right Column: Key Takeaways -->
+    <div>
+      <h2 class="text-2xl font-bold mb-8 text-[#F9C100]">Key Takeaways</h2>
+      <ul class="list-disc list-inside space-y-4 text-md">
+        <li>Gain advanced techniques for managing stress, boosting mental resilience, and improving focus in high-pressure environments.</li>
+        <li>Master key leadership skills such as effective decision-making, communication, and team management, essential for excelling in senior roles.</li>
+        <li>Acquire tools and methodologies to create a sustainable and effective work-life balance that fosters long-term success and well-being.</li>
+        <li>Learn from industry experts on how to leverage emerging technologies and trends to stay ahead in an ever-evolving job market.</li>
+        <li>Understand the importance of emotional intelligence in leadership and how it can enhance interpersonal relationships and team dynamics.</li>
+        <li>Walk away with a personalized action plan that outlines your professional goals, strategies for overcoming challenges, and a roadmap for continuous growth and development.</li>
+      </ul>
+    </div>   
+
+  </div>
+</section>
+
+
+  <!-- Footer -->
+<footer class="bg-[#392E7F] text-gray-300 py-4 px-6">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm">
+    <div>
+      Copyright – 2025 | Intellidea Consultancy Services Pvt. Ltd.
+    </div>
+    <div class="flex space-x-6 mt-2 sm:mt-0">
+      <a href="privacy.html" class="hover:underline">Privacy Policy</a>
+      <a href="cookie.html" class="hover:underline">Cookie Policy</a>
+      <a href="terms.html" class="hover:underline">Terms & Conditions</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
