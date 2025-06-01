@@ -50,27 +50,27 @@
 <body class="font-sans text-gray-800 bg-gradient-purple">
 
 <!-- Header -->
-<header class="bg-[#392E7F] text-white sticky top-0 z-50 h-[60px]" x-data="{ open: false }">
+<header class="bg-white text-[#392E7F] sticky top-0 z-50 h-[60px] shadow-md" x-data="{ open: false }">
   <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
 
     <!-- Logo -->
     <div class="flex-shrink-0">
-      <img src="assets/images/IntelliWise logo.png" alt="Logo" class="h-[40px] w-auto">
+      <img src="assets/images/IWhite.png" alt="Logo" class="h-[40px] w-auto">
     </div>
 
     <!-- Desktop Menu -->
     <nav class="hidden md:flex items-center gap-4 lg:gap-8 text-sm font-medium">
-      <a href="./index.html#home" class="text-[#FFC700] underline underline-offset-[6px] decoration-[#FFC700]">Home</a>
+      <a href="./index.html#home" class="text-[#392E7F] underline underline-offset-[6px] decoration-[#392E7F]">Home</a>
       <a href="./index.html#serve" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Who We Serve</a>
       <a href="./index.html#programs" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Our Programs</a>
       <a href="./index.html#whyus" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Why Us?</a>
       <a href="./index.html#about" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">About Us</a>
       <a href="./index.html#events" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Events</a>
-      <a href="./index.html#contact" class="bg-[#FFC700] text-[#392E7F] px-4 py-2 rounded-sm font-semibold hover:bg-yellow-500 transition">Connect Now</a>
+      <a href="./index.html#contact" class="bg-[#392E7F] text-[#FFC700] px-4 py-2 rounded-sm font-semibold hover:bg-[#2d2464] transition">Connect Now</a>
     </nav>
 
     <!-- Mobile Hamburger -->
-    <button @click="open = !open" class="md:hidden text-white focus:outline-none" aria-label="Toggle navigation">
+    <button @click="open = !open" class="md:hidden text-[#392E7F] focus:outline-none" aria-label="Toggle navigation">
       <template x-if="!open">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
@@ -85,16 +85,17 @@
   </div>
 
   <!-- Mobile Menu -->
-  <div x-show="open" x-cloak x-transition class="md:hidden px-4 pb-4 space-y-2 bg-[#392E7F] text-white">
-    <a href="./index.html#home" class="block text-[#FFC700] border-b border-[#FFC700] pb-1">Home</a>
+  <div x-show="open" x-cloak x-transition class="md:hidden px-4 pb-4 space-y-2 bg-white text-[#392E7F]">
+    <a href="./index.html#home" class="block text-[#392E7F] border-b border-[#392E7F] pb-1 font-semibold">Home</a>
     <a href="./index.html#serve" class="block hover:text-[#FFC700]">Who We Serve</a>
     <a href="./index.html#programs" class="block hover:text-[#FFC700]">Our Programs</a>
     <a href="./index.html#whyus" class="block hover:text-[#FFC700]">Why Us?</a>
     <a href="./index.html#about" class="block hover:text-[#FFC700]">About Us</a>
     <a href="./index.html#events" class="block hover:text-[#FFC700]">Events</a>
-    <a href="./index.html#contact" class="block bg-[#FFC700] text-[#392E7F] px-4 py-2 rounded-sm font-semibold hover:bg-yellow-500 transition">Connect Now</a>
+    <a href="./index.html#contact" class="block bg-[#392E7F] text-[#FFC700] px-4 py-2 rounded-sm font-semibold hover:bg-[#2d2464] transition">Connect Now</a>
   </div>
 </header>
+
 
 <!-- WhatsApp Button -->
 <a href="https://wa.me/9082378708"
@@ -107,135 +108,168 @@
   
 
 
-<!-- Hero Section -->
 <section class="bg-[#392E7F] text-white py-16 px-6 lg:px-20">
-  <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center">
-    
+  <div class="flex flex-col lg:flex-row justify-between w-full gap-12">
+
     <!-- Left Content -->
-    <div class="max-w-2xl">
-      <div class="flex items-center mb-4">
-        <div class="bg-yellow text-black px-3 py-1 rounded-full text-sm font-semibold mr-3">
+    <div class="w-full lg:w-1/2 max-w-2xl flex flex-col justify-start">
+      <!-- EXCLUSIVE Tag -->
+      <div class="flex items-center mt-2 mb-5">
+        <div class="bg-yellow text-black px-4 py-1 rounded-full text-sm font-semibold mr-3">
           EXCLUSIVE
-        </div>
-        <div class="text-corporate-yellow text-sm font-medium">
-          IntelliWise Academy × Intellidea
         </div>
       </div>
 
-      <h1 class="text-5xl font-bold mb-3 leading-tight">
-        Health2Wealth<br>
-        <span class="text-corporate-yellow">Summit 2025</span>
-      </h1>
+      <!-- Headings -->
+      <div class="flex items-center space-x-4">
+<div class="flex items-center space-x-6">
+  <!-- Logo: height adjusted to approx same height as heading, rounded corners -->
+  <img src="assets/images/newh2w.jpg" alt="Logo" class="h-20 sm:h-24 rounded-lg object-contain" />
+  
+  <!-- Heading -->
+  <h1 class="text-4xl sm:text-5xl font-bold leading-tight">
+    Health2Wealth<br>
+    <span class="text-corporate-yellow">Summit 2025</span>
+  </h1>
+</div>
 
-      <p class="text-2xl text-corporate-yellow italic font-medium mb-6">
+</div>
+
+
+      <p class="text-xl sm:text-2xl text-corporate-yellow italic font-medium mt-4 mb-4">
         Pathway to Prosperity
       </p>
 
-      <p class="text-lg text-white/90 mb-8 leading-relaxed">
-        A pioneering summit connecting health and finance for holistic wellness. </br>
-        Explore the convergence of health and wealth for unprecedented growth.
+      <p class="text-base sm:text-lg text-white/90 mb-6 leading-relaxed">
+        A pioneering summit for holistic wellness to explore the convergence of health and wealth for unprecedented growth.
       </p>
 
-      <!-- Register Button -->
-      <a href="https://forms.gle/SieEB2iwb4mADjD49" target="_blank" rel="noopener noreferrer" class="inline-block bg-yellow text-black font-bold px-6 py-3 rounded-lg shadow-md hover:bg-yellow-600 transition duration-300">
+      <!-- CTA -->
+      <a href="https://forms.gle/SieEB2iwb4mADjD49" target="_blank" rel="noopener noreferrer"
+        class="inline-block bg-yellow text-black w-full sm:w-[60%] font-bold px-6 py-3 rounded-lg shadow-md hover:bg-yellow-600 transition duration-300 text-center">
         Register Now
       </a>
 
-      <!-- Ticket Info -->
-      <p class="text-white mt-4">Each ticket is priced at ₹3,499 + GST.</p>
+      <p class="text-white mt-4">Each ticket is priced at ₹3,499/- only.</p>
       <p class="text-white text-sm mt-1">* <strong>Terms & Conditions:</strong> All ticket sales are final and non-refundable.</p>
     </div>
 
-    <!-- Right Partner Logos in 2x2 Grid -->
-    <div class="mt-10 lg:mt-0 lg:ml-10 grid grid-cols-2 gap-6">
-      <img src="assets/images/IntelliWise logo.png" alt="Partner 1" class="w-32 h-auto object-contain" />
-      <img src="assets/images/intellidea.png" alt="Partner 2" class="w-32 h-auto object-contain" />
-      <img src="assets/images/BSE.jpg" alt="Partner 3" class="w-32 h-auto object-contain" />
-      <img src="assets/images/h2wlogo.png" alt="Partner 4" class="w-32 h-auto bg-white object-contain" />
+    <!-- Right Content -->
+    <div class="w-full lg:w-1/2 relative bg-gradient-to-b from-white via-gray-50 to-white p-6 rounded-xl shadow-xl flex flex-col justify-between min-h-[380px]">
+
+      <!-- Countdown -->
+      <div x-data="countdown('2025-06-14T09:15:00')" class="w-full bg-[#392E7F] text-white rounded-lg p-4 border-2 border-[#F9C100] mb-6">
+        <template x-if="!expired">
+          <div>
+            <div class="text-center text-lg font-semibold mb-2 text-[#F9C100]">Event starts in</div>
+            <div class="flex justify-between text-center gap-2">
+              <div>
+                <div class="text-2xl sm:text-3xl font-bold" x-text="days">0</div>
+                <div class="text-sm text-white/80">Days</div>
+              </div>
+              <div>
+                <div class="text-2xl sm:text-3xl font-bold" x-text="hours">0</div>
+                <div class="text-sm text-white/80">Hours</div>
+              </div>
+              <div>
+                <div class="text-2xl sm:text-3xl font-bold" x-text="minutes">0</div>
+                <div class="text-sm text-white/80">Minutes</div>
+              </div>
+              <div>
+                <div class="text-2xl sm:text-3xl font-bold" x-text="seconds">0</div>
+                <div class="text-sm text-white/80">Seconds</div>
+              </div>
+            </div>
+          </div>
+        </template>
+        <template x-if="expired">
+          <div class="text-center text-2xl font-semibold text-[#F9C100]">We’re Live!</div>
+        </template>
+      </div>
+
+      <!-- Location & Time -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <!-- Location -->
+        <div class="flex items-start gap-3">
+          <div class="bg-[#F9C100]/20 p-2 rounded-lg flex items-center justify-center">
+            <a href="https://maps.app.goo.gl/PTXfWT7VHt7cbHJ68" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#F9C100]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </a>
+          </div>
+          <div>
+            <div class="font-semibold text-[#392E7F]">Bombay Stock Exchange, Mumbai</div>
+          </div>
+        </div>
+
+        <!-- Time -->
+        <div class="flex items-start gap-3">
+          <div class="bg-[#F9C100]/20 p-2 rounded-lg flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#F9C100]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <div class="font-semibold text-[#392E7F]">14 June 2025</div>
+            <div class="text-sm text-gray-600">9:15 AM – 1:30 PM</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BSE Logo -->
+<!-- BSE Logo -->
+<!-- BSE Logo - visible on desktop only -->
+<div class="mt-6 hidden sm:block">
+  <img src="assets/images/BSE.jpg" alt="BSE Logo" class="w-40 h-14 object-contain bg-white p-1 rounded shadow-md" />
+</div>
+
+<!-- BSE Logo and Intellidea Logo container for mobile (centered) -->
+<div class="sm:hidden text-center mt-6">
+  <img src="assets/images/BSE.jpg" alt="BSE Logo" class="inline-block w-40 h-14 object-contain bg-white p-1 rounded shadow-md" />
+  <img src="assets/images/ideawhite.png" alt="Intellidea Logo" class="inline-block w-40 h-14 object-contain bg-white p-1 rounded shadow-md mt-2" />
+</div>
+
+<!-- Intellidea Logo (absolute bottom right on desktop only) -->
+<div class="absolute bottom-6 right-6 hidden sm:block">
+  <img src="assets/images/ideawhite.png" alt="Intellidea Logo" class="w-40 h-14 object-contain bg-white p-1 rounded shadow-md" />
+</div>
+
+
     </div>
-
   </div>
-</section>
 
+  <!-- Alpine Countdown Script -->
+  <script>
+    function countdown(targetDate) {
+      return {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+        expired: false,
+        init() {
+          const target = new Date(targetDate).getTime();
+          const timer = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = target - now;
 
-    <section class="py-16 bg-white text-center">
-    <h2 class="text-4xl font-bold text-[#392E7F] mb-12">Key Speakers & Panelists</h2>
+            if (distance <= 0) {
+              this.expired = true;
+              clearInterval(timer);
+              return;
+            }
 
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 px-6">
-
-      <!-- Speaker 1 -->
-      <div class="flex flex-col items-center">
-        <div class="w-56 h-72 overflow-hidden rounded-[50%] mb-6">
-          <img src="assets/images/h2wspeakers/Rajeev.png" alt="Rajeev Agarwal" class="object-cover w-full h-full">
-        </div>
-        <h3 class="text-[#392E7F] font-semibold text-lg">Rajeev Agarwal</h3>
-        <p class="text-purple-900 mb-2">Former Whole-Time Member, SEBI & IRS Officer</p>
-      </div>
-
-      <!-- Speaker 2 -->
-      <div class="flex flex-col items-center">
-        <div class="w-56 h-72 overflow-hidden rounded-[50%] mb-6">
-          <img src="assets/images/h2wspeakers/Kamala.png" alt="Kamala Kantharaj" class="object-cover w-full h-full">
-        </div>
-        <h3 class="text-[#392E7F] font-semibold text-lg">Kamala Kantharaj</h3>
-        <p class="text-purple-900 mb-2">Chief Regulatory Officer, BSE</p>
-      </div>
-
-      <!-- Speaker 3 -->
-      <div class="flex flex-col items-center">
-        <div class="w-56 h-72 overflow-hidden rounded-[50%] mb-6">
-          <img src="assets/images/h2wspeakers/Deena.png" alt="Deena Mehta" class="object-cover w-full h-full">
-        </div>
-        <h3 class="text-[#392E7F] font-semibold text-lg">Deena Mehta</h3>
-        <p class="text-purple-900 mb-2">Former President & First Woman Member, BSE</p>
-      </div>
-
-      <!-- Speaker 4 -->
-      <div class="flex flex-col items-center">
-        <div class="w-56 h-72 overflow-hidden rounded-[50%] mb-6">
-          <img src="assets/images/h2wspeakers/Vinod.png" alt="Vinod Saini" class="object-cover w-full h-full">
-        </div>
-        <h3 class="text-[#392E7F] font-semibold text-lg">Vinod Saini</h3>
-        <p class="text-purple-900 mb-2">Holistic Health & Spiritual Wellness Expert</p>
-      </div>
-
-      <!-- Speaker 5 -->
-      <div class="flex flex-col items-center">
-        <div class="w-56 h-72 overflow-hidden rounded-[50%] mb-6">
-          <img src="assets/images/h2wspeakers/Geeta.png" alt="Dr. Geeta Narayan" class="object-cover w-full h-full">
-        </div>
-        <h3 class="text-[#392E7F] font-semibold text-lg">Dr. Geeta Narayan</h3>
-        <p class="text-purple-900 mb-2">Senior Academician & Mentor, Emotional Intelligence Expert</p>
-      </div>
-
-      <!-- Speaker 6 -->
-      <div class="flex flex-col items-center">
-        <div class="w-56 h-72 overflow-hidden rounded-[50%] mb-6">
-          <img src="assets/images/h2wspeakers/Manoj.png" alt="Dr. Manoj Vaish" class="object-cover w-full h-full">
-        </div>
-        <h3 class="text-[#392E7F] font-semibold text-lg">Dr. Manoj Vaish</h3>
-        <p class="text-purple-900 mb-2">Former ED & CEO, BSE; Finance Leader</p>
-      </div>
-
-      <!-- Speaker 7 -->
-      <div class="flex flex-col items-center">
-        <div class="w-56 h-72 overflow-hidden rounded-[50%] mb-6">
-          <img src="assets/images/h2wspeakers/Nilesh.png" alt="Nilesh Vikamsey" class="object-cover w-full h-full">
-        </div>
-        <h3 class="text-[#392E7F] font-semibold text-lg">Nilesh Vikamsey</h3>
-        <p class="text-purple-900 mb-2">Past President ICAI & Chartered Accountant</p>
-      </div>
-
-      <!-- Speaker 8 -->
-      <div class="flex flex-col items-center">
-        <div class="w-56 h-72 overflow-hidden rounded-[50%] mb-6">
-          <img src="assets/images/h2wspeakers/Navin.png" alt="Navin Agarwal" class="object-cover w-full h-full">
-        </div>
-        <h3 class="text-[#392E7F] font-semibold text-lg">Navin Agarwal</h3>
-        <p class="text-purple-900 mb-2">CFO, Dream11 & Financial Governance Expert</p>
-      </div>
-
-  </div>
+            this.days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            this.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            this.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            this.seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          }, 1000);
+        }
+      };
+    }
+  </script>
 </section>
 
 
@@ -244,17 +278,19 @@
     <h2 class="text-3xl font-bold mb-10 text-center text-purple">About the Event</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
       <div>
-        <img src="assets/icons/summit.svg" alt="Summit Icon" class="mx-auto mb-4 w-12 h-12">
+        <img src="assets/images/instructors2.png" alt="Summit Icon" class="mx-auto mb-4 w-12 h-12">
         <h3 class="font-semibold text-lg mb-2">Pioneering Summit</h3>
-        <p>Connects health and finance for holistic wellness.</p>
+        <p>A pioneering summit for holistic wellness to explore the convergence of health and wealth for unprecedented growth.</p>
       </div>
       <div>
-        <img src="assets/icons/objective.svg" alt="Objective Icon" class="mx-auto mb-4 w-12 h-12">
+        <img src="assets/images/prosperity2.png" alt="Objective Icon" class="mx-auto mb-4 w-12 h-12">
         <h3 class="font-semibold text-lg mb-2">Summit Objective</h3>
-        <p>Explore health and wealth convergence for growth.</p>
+        <p>True wealth & sustainable success is built at the intersection of personal well-being, purposeful leadership, and empowered communities
+        </br> H2W Summit 2025 is a small attempt in this direction. </p>
+        </p>
       </div>
       <div>
-        <img src="assets/icons/attendees.svg" alt="Attendees Icon" class="mx-auto mb-4 w-12 h-12">
+        <img src="assets/images/customer2.png" alt="Attendees Icon" class="mx-auto mb-4 w-12 h-12">
         <h3 class="font-semibold text-lg mb-2">Key Attendees</h3>
         <p>Industry Experts, HNIs, Executives & Senior Professionals.</p>
       </div>
@@ -278,10 +314,6 @@
       </p>
       <div class="space-y-6 text-md">
         <div>
-          <h3 class="font-bold text-white mb-2">Objective:</h3>
-          <p>Equip participants with practical strategies to thrive professionally and personally.</p>
-        </div>
-        <div>
           <h3 class="font-bold text-white mb-2">Why it matters:</h3>
           <ul class="list-disc list-inside space-y-1">
             <li>Essential in today’s fast-paced work environment</li>
@@ -302,17 +334,332 @@
     <div>
       <h2 class="text-2xl font-bold mb-8 text-[#F9C100]">Key Takeaways</h2>
       <ul class="list-disc list-inside space-y-4 text-md">
-        <li>Gain advanced techniques for managing stress, boosting mental resilience, and improving focus in high-pressure environments.</li>
-        <li>Master key leadership skills such as effective decision-making, communication, and team management, essential for excelling in senior roles.</li>
-        <li>Acquire tools and methodologies to create a sustainable and effective work-life balance that fosters long-term success and well-being.</li>
-        <li>Learn from industry experts on how to leverage emerging technologies and trends to stay ahead in an ever-evolving job market.</li>
-        <li>Understand the importance of emotional intelligence in leadership and how it can enhance interpersonal relationships and team dynamics.</li>
-        <li>Walk away with a personalized action plan that outlines your professional goals, strategies for overcoming challenges, and a roadmap for continuous growth and development.</li>
+      <li> Actionable insights on integrating wellness into personal and professional life.</li>
+
+      <li> Experiential knowledge from experts in well-being, finance, leadership, and entrepreneurship.</li>
+
+      <li> Expanded networks with like-minded professionals, individuals, and thought leaders.</li>
+
+      <li>Holistic strategies to build healthier mind, body and emotions to build resilient businesses</li>
+
+      <li>A renewed sense of purpose and clarity to thrive in both work and life.</li>
       </ul>
     </div>   
 
   </div>
 </section>
+
+
+
+ <section class="py-16 bg-white text-center">
+  <h2 class="text-4xl font-bold text-[#392E7F] mb-12">Key Speakers & Panelists</h2>
+
+  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 px-6 items-stretch">
+
+    <!-- Speaker Card Template -->
+    <!-- Use this structure for all cards -->
+
+    <!-- Rajeev Agarwal -->
+    <div class="flex flex-col items-center h-full">
+      <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
+        <img src="assets/images/h2wspeakers/Rajeev.png" alt="Rajeev Agarwal" class="object-cover w-full h-full">
+      </div>
+      <h3 class="text-[#392E7F] font-semibold text-lg mb-1 text-center">Rajeev Agarwal</h3>
+      <p class="text-purple-900 text-sm mb-2 text-center">Former Whole-Time Member, SEBI & IRS Officer</p>
+      <p class="text-gray-600 text-sm text-center">Pioneered regulatory reforms and enhanced investor protection during his tenure at SEBI.</p>
+    </div>
+
+    <!-- Kamala Kantharaj -->
+    <div class="flex flex-col items-center h-full">
+      <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
+        <img src="assets/images/h2wspeakers/Kamala.png" alt="Kamala Kantharaj" class="object-cover w-full h-full">
+      </div>
+      <h3 class="text-[#392E7F] font-semibold text-lg mb-1 text-center">Kamala Kantharaj</h3>
+      <p class="text-purple-900 text-sm mb-2 text-center">Chief Regulatory Officer, BSE</p>
+      <p class="text-gray-600 text-sm text-center">Driving regulatory excellence and corporate governance at India's premier stock exchange.</p>
+    </div>
+
+    <!-- Deena Mehta -->
+    <div class="flex flex-col items-center h-full">
+      <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
+        <img src="assets/images/h2wspeakers/Deena.png" alt="Deena Mehta" class="object-cover w-full h-full">
+      </div>
+      <h3 class="text-[#392E7F] font-semibold text-lg mb-1 text-center">Deena Mehta</h3>
+      <p class="text-purple-900 text-sm mb-2 text-center">Former President & First Woman Member, BSE</p>
+      <p class="text-gray-600 text-sm text-center">A pioneer in Indian finance, empowering inclusion and policy influence in the stock market.</p>
+    </div>
+
+    <!-- Vinod Saini -->
+    <div class="flex flex-col items-center h-full">
+      <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
+        <img src="assets/images/h2wspeakers/Vinod.png" alt="Vinod Saini" class="object-cover w-full h-full">
+      </div>
+      <h3 class="text-[#392E7F] font-semibold text-lg mb-1 text-center">Vinod Saini</h3>
+      <p class="text-purple-900 text-sm mb-2 text-center">Holistic Health & Spiritual Wellness Expert</p>
+      <p class="text-gray-600 text-sm text-center">Empowering individuals with mind-body-spirit alignment through holistic practices.</p>
+    </div>
+
+    <!-- Dr. Geeta Narayan -->
+    <div class="flex flex-col items-center h-full">
+      <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
+        <img src="assets/images/h2wspeakers/Geeta.png" alt="Dr. Geeta Narayan" class="object-cover w-full h-full">
+      </div>
+      <h3 class="text-[#392E7F] font-semibold text-lg mb-1 text-center">Dr. Geeta Narayan</h3>
+      <p class="text-purple-900 text-sm mb-2 text-center">Senior Academician & Mentor, Emotional Intelligence Expert</p>
+      <p class="text-gray-600 text-sm text-center">Focused on emotional learning, mentoring youth, and shaping modern educational practices.</p>
+    </div>
+
+    <!-- Dr. Manoj Vaish -->
+    <div class="flex flex-col items-center h-full">
+      <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
+        <img src="assets/images/h2wspeakers/Manoj.png" alt="Dr. Manoj Vaish" class="object-cover w-full h-full">
+      </div>
+      <h3 class="text-[#392E7F] font-semibold text-lg mb-1 text-center">Dr. Manoj Vaish</h3>
+      <p class="text-purple-900 text-sm mb-2 text-center">Former ED & CEO, BSE; Finance Leader</p>
+      <p class="text-gray-600 text-sm text-center">Strategic innovator who transformed Indian exchanges through leadership and vision.</p>
+    </div>
+
+    <!-- Nilesh Vikamsey -->
+    <div class="flex flex-col items-center h-full">
+      <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
+        <img src="assets/images/h2wspeakers/Nilesh.png" alt="Nilesh Vikamsey" class="object-cover w-full h-full">
+      </div>
+      <h3 class="text-[#392E7F] font-semibold text-lg mb-1 text-center">Nilesh Vikamsey</h3>
+      <p class="text-purple-900 text-sm mb-2 text-center">Past President ICAI & Chartered Accountant</p>
+      <p class="text-gray-600 text-sm text-center">Advocating financial literacy and integrity in India’s chartered accounting sphere.</p>
+    </div>
+
+    <!-- Navin Agarwal -->
+    <div class="flex flex-col items-center h-full">
+      <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
+        <img src="assets/images/h2wspeakers/Navin.png" alt="Navin Agarwal" class="object-cover w-full h-full">
+      </div>
+      <h3 class="text-[#392E7F] font-semibold text-lg mb-1 text-center">Navin Agarwal</h3>
+      <p class="text-purple-900 text-sm mb-2 text-center">CFO, Dream11 & Financial Governance Expert</p>
+      <p class="text-gray-600 text-sm text-center">At the forefront of fintech growth and compliance in India’s digital gaming sector.</p>
+    </div>
+
+    <!-- Rajnikant Patel -->
+    <div class="flex flex-col items-center h-full">
+      <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
+        <img src="assets/images/Commitee/1.png" alt="Rajnikant Patel" class="object-cover w-full h-full">
+      </div>
+      <h3 class="text-[#392E7F] font-semibold text-lg mb-1 text-center">Rajnikant Patel</h3>
+      <p class="text-purple-900 text-sm mb-2 text-center">Chairman</p>
+      <p class="text-gray-600 text-sm text-center">Revolutionized India’s financial markets as former MD & CEO of BSE and ICEX.</p>
+    </div>
+
+    <!-- Viresh Patel -->
+    <div class="flex flex-col items-center h-full">
+      <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
+        <img src="assets/images/Commitee/2.png" alt="Viresh Patel" class="object-cover w-full h-full">
+      </div>
+      <h3 class="text-[#392E7F] font-semibold text-lg mb-1 text-center">Viresh Patel</h3>
+      <p class="text-purple-900 text-sm mb-2 text-center">MD & CEO</p>
+      <p class="text-gray-600 text-sm text-center">Versatile leader across BFSI, IT, education, and healthcare with 27+ years of impact.</p>
+    </div>
+
+    <!-- Jyoti Patel -->
+    <div class="flex flex-col items-center h-full">
+      <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
+        <img src="assets/images/Commitee/3.png" alt="Jyoti Patel" class="object-cover w-full h-full">
+      </div>
+      <h3 class="text-[#392E7F] font-semibold text-lg mb-1 text-center">Jyoti Patel</h3>
+      <p class="text-purple-900 text-sm mb-2 text-center">Director</p>
+      <p class="text-gray-600 text-sm text-center">Educator and women empowerment advocate with over 25 years of influence.</p>
+    </div>
+
+    <!-- Dr. R.B. Barman -->
+    <div class="flex flex-col items-center h-full">
+      <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
+        <img src="assets/images/Commitee/4.png" alt="Dr. R.B. Barman" class="object-cover w-full h-full">
+      </div>
+      <h3 class="text-[#392E7F] font-semibold text-lg mb-1 text-center">Dr. R.B. Barman</h3>
+      <p class="text-purple-900 text-sm mb-2 text-center">Former ED, RBI</p>
+      <p class="text-gray-600 text-sm text-center">Architect of India’s digital payment revolution; shaped UPI and data governance.</p>
+    </div>
+
+    <!-- Sanjay Ubale (Centered Card) -->
+    <div class="flex flex-col items-center h-full md:col-span-1 md:col-start-2">
+      <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
+        <img src="assets/images/Commitee/5.png" alt="Sanjay Ubale" class="object-cover w-full h-full">
+      </div>
+      <h3 class="text-[#392E7F] font-semibold text-lg mb-1 text-center">Sanjay Ubale</h3>
+      <p class="text-purple-900 text-sm mb-2 text-center">Former IAS Officer</p>
+      <p class="text-gray-600 text-sm text-center">Governance & infrastructure expert with key roles at Tata Realty & Gates Foundation.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-16 bg-[#392E7F] text-white">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-start">
+    
+    <!-- Left Side -->
+    <div>
+      <h3 class="text-lg text-yellow-400 font-semibold mb-4">Reach out to us or learn more about our services</h3>
+      <div class="mb-6">
+        <p class="font-bold">Corporate Office:</p>
+        <p>Innov8, Times Square, A Wing, 4th Floor, Marol, Andheri Kurla Road,<br>Andheri East, Mumbai 400059</p>
+      </div>
+      <div class="mb-6">
+        <p class="font-bold">Regd. Office:</p>
+        <p>EMP 47/1903, Thakur Village, Kandivali East, Mumbai 400101</p>
+      </div>
+      <div class="flex items-center gap-3 mb-4">
+        <img src="assets/images/footer/phone10.png" alt="Phone" class="w-5 h-5" />
+        <span class="text-white">+91 9082 378 708</span>
+      </div>
+      <div class="flex items-center gap-3 mb-4">
+        <img src="assets/images/footer/finalm.png" alt="Email" class="w-5 h-5" />
+        <span class="text-white">inquiry@intelliwiseacademy.com</span>
+      </div>
+    </div>
+
+    <!-- Right Side: Contact Form -->
+    <div x-data="contactForm()" x-init="initialize">
+      <h3 class="text-yellow-400 font-semibold text-lg mb-4">Ready to Take Your Business to the Next Level?</h3>
+      <form @submit.prevent="submitForm" class="space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="text" x-model="firstName" required placeholder="First name" class="w-full p-2 bg-transparent border border-white rounded text-white placeholder-yellow-400" />
+          <input type="text" x-model="lastName" required placeholder="Last name" class="w-full p-2 bg-transparent border border-white rounded text-white placeholder-yellow-400" />
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="email" x-model="email" required placeholder="Email" class="w-full p-2 bg-transparent border border-white rounded text-white placeholder-yellow-400" />
+          <input id="whatsapp" type="tel" required placeholder="WhatsApp Number" class="w-full p-2 bg-transparent border border-white rounded text-white placeholder-yellow-400" />
+        </div>
+        <textarea x-model="message" required rows="4" placeholder="Message" class="w-full p-2 bg-transparent border border-white rounded text-white placeholder-yellow-400"></textarea>
+        <button type="submit" class="border border-yellow-400 text-yellow-400 px-6 py-2 rounded-full hover:bg-yellow-400 hover:text-[#392E7F] transition duration-300">Submit</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- AlpineJS & Form Logic -->
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+<script>
+  function contactForm() {
+    return {
+      firstName: '',
+      lastName: '',
+      email: '',
+      whatsapp: '',   // This will hold the raw input but we won't send this directly
+      message: '',
+      iti: null,      // To store the intlTelInput instance
+
+      initialize() {
+        const input = document.querySelector("#whatsapp");
+        this.iti = window.intlTelInput(input, {
+          initialCountry: "auto",
+          geoIpLookup: function (callback) {
+            fetch("https://ipapi.co/json")
+              .then(res => res.json())
+              .then(data => callback(data.country_code))
+              .catch(() => callback("IN"));
+          },
+          utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+        });
+      },
+
+      submitForm() {
+        // Get full international number from intl-tel-input instance
+        const fullNumber = this.iti.getNumber();
+
+        if (!this.iti.isValidNumber()) {
+          alert("Please enter a valid WhatsApp number including country code.");
+          return;
+        }
+
+        const data = {
+          firstName: this.firstName,
+          lastName: this.lastName,
+          email: this.email,
+          whatsapp: fullNumber,   // send full international number here
+          message: this.message
+        };
+
+        fetch("https://script.google.com/macros/s/AKfycbzMhWX6HQx02IUoGYfPSJZe7anc_E0hlnYUoxqHIiWopQ6yxSbjPfhpvK8-BqJBekqJ/exec", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        })
+        .then(res => res.json())
+        .then(response => {
+          if (response.result === "success") {
+            alert("Thank you! Your message has been sent.");
+            // Clear all fields
+            this.firstName = '';
+            this.lastName = '';
+            this.email = '';
+            this.whatsapp = '';
+            this.message = '';
+            this.iti.setNumber(''); // Clear the intl-tel-input field as well
+          } else {
+            alert("Something went wrong. Please try again.");
+          }
+        })
+        .catch(err => {
+          console.error(err);
+          alert("Error sending form. Please try again later.");
+
+          
+        });
+      }
+    }
+  }
+</script>
+
+<!-- Styling Fixes -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+<style>
+  #whatsapp, .iti__country, .iti__selected-flag, .iti__dial-code {
+    color: black !important;
+    background-color: transparent !important;
+    border-color: white !important;
+  }
+
+  #whatsapp::placeholder {
+    color: #facc15 !important; /* yellow-400 */
+  }
+
+  .iti__flag-container {
+    background-color: transparent !important;
+  }
+
+  #whatsapp,
+#whatsapp.iti__input,
+.iti__selected-flag,
+.iti__flag-container,
+.iti__country-list,
+.iti__dial-code {
+  color: white !important;       /* change black text to white */
+  background-color: transparent !important;
+  border-color: white !important;
+}
+
+/* Placeholder color */
+#whatsapp::placeholder {
+  color: #facc15 !important; /* yellow-400 */
+}
+
+/* Remove background from flag container */
+.iti__flag-container {
+  background-color: transparent !important;
+}
+
+/* Input padding fix, so text does not overlap flag */
+#whatsapp {
+  padding-left: 50px !important; /* Adjust based on flag size */
+}
+
+</style>
+
+
 
 
   <!-- Footer -->
