@@ -109,7 +109,8 @@
   
 
 
-<section class="bg-[#392E7F] text-white py-16 px-6 lg:px-20">
+<section class="bg-[#392E7F] text-white pt-16 pb-4 px-6 lg:px-20">
+
   <div class="flex flex-col lg:flex-row justify-between w-full gap-12">
 
     <!-- Left Content -->
@@ -149,8 +150,7 @@
         Register Now
       </a>
 
-      <p class="text-white mt-4">Each ticket is priced at ₹3,499/- </p>
-      <p class="text-white text-sm mt-1">* <strong>Terms & Conditions:</strong> All ticket sales are final and non-refundable.</p>
+      <p class="text-white mt-4">Each ticket is priced at ₹3,499/-* </p>
     </div>
 
 
@@ -212,7 +212,7 @@
             </svg>
           </div>
           <div>
-            <div class="font-semibold text-[#392E7F]">14 June 2025</div>
+            <div class="font-semibold text-[#392E7F]">14th June, 2025</div>
             <div class="text-sm text-gray-600">9:15 AM – 1:30 PM</div>
           </div>
         </div>
@@ -238,7 +238,9 @@
 
 
     </div>
+    
   </div>
+  <p class="text-white text-sm mt-10 ml-[62%]">*<strong>Terms & Conditions:</strong> All ticket sales are final and non-refundable.</p>
 
   <!-- Alpine Countdown Script -->
   <script>
@@ -363,12 +365,12 @@
 
     <li class="flex items-start space-x-4">
       <img src="assets/images/4.png" alt="Holistic Icon" class="w-10 h-10 mt-1" />
-      <span>Holistic strategies to build healthier mind, body and emotions to build resilient businesses.</span>
+      <span>Holistic strategies to build healthier mind, body and emotions </br> to build resilient businesses.</span>
     </li>
 
     <li class="flex items-start space-x-4">
       <img src="assets/images/wlb.png" alt="Purpose Icon" class="w-10 h-10 mt-1" />
-      <span>A renewed sense of purpose and clarity to thrive in both work and life.</span>
+      <span>A renewed sense of purpose and clarity to thrive in both work </br> and life.</span>
     </li>
 
   </ul>
@@ -659,29 +661,22 @@
 <!-- Styling Fixes -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
 <style>
-  #whatsapp, .iti__country, .iti__selected-flag, .iti__dial-code {
-    color: black !important;
-    background-color: transparent !important;
-    border-color: white !important;
-  }
-
-  #whatsapp::placeholder {
-    color: #facc15 !important; /* yellow-400 */
-  }
-
-  .iti__flag-container {
-    background-color: transparent !important;
-  }
-
-  #whatsapp,
+#whatsapp,
 #whatsapp.iti__input,
 .iti__selected-flag,
 .iti__flag-container,
-.iti__country-list,
 .iti__dial-code {
-  color: white !important;       /* change black text to white */
+  color: white !important;
   background-color: transparent !important;
   border-color: white !important;
+}
+
+/* Country list dropdown should be white */
+.iti__country-list {
+  background-color: white !important;
+  color: black !important; /* Optional: ensure text is visible */
+  border: 1px solid #e5e7eb; /* Optional: Tailwind's gray-200 for subtle border */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Optional: Add slight shadow for better UX */
 }
 
 /* Placeholder color */
@@ -696,8 +691,9 @@
 
 /* Input padding fix, so text does not overlap flag */
 #whatsapp {
-  padding-left: 50px !important; /* Adjust based on flag size */
+  padding-left: 50px !important;
 }
+
 
 </style>
 
