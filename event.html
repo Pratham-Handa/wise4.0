@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/alpinejs" defer></script>
+  
   <!-- Add this in your <head> section -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
@@ -66,7 +67,7 @@
       <a href="./index.html#whyus" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Why Us?</a>
       <a href="./index.html#about" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">About Us</a>
       <a href="./index.html#events" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Events</a>
-      <a href="./index.html#contact" class="bg-[#392E7F] text-[#FFC700] px-4 py-2 rounded-sm font-semibold hover:bg-[#2d2464] transition">Connect Now</a>
+      <a href="#contact" class="bg-[#392E7F] text-[#FFC700] px-4 py-2 rounded-sm font-semibold hover:bg-[#2d2464] transition">Connect Now</a>
     </nav>
 
     <!-- Mobile Hamburger -->
@@ -92,7 +93,7 @@
     <a href="./index.html#whyus" class="block hover:text-[#FFC700]">Why Us?</a>
     <a href="./index.html#about" class="block hover:text-[#FFC700]">About Us</a>
     <a href="./index.html#events" class="block hover:text-[#FFC700]">Events</a>
-    <a href="./index.html#contact" class="block bg-[#392E7F] text-[#FFC700] px-4 py-2 rounded-sm font-semibold hover:bg-[#2d2464] transition">Connect Now</a>
+    <a href="#contact" class="block bg-[#392E7F] text-[#FFC700] px-4 py-2 rounded-sm font-semibold hover:bg-[#2d2464] transition">Connect Now</a>
   </div>
 </header>
 
@@ -115,28 +116,26 @@
     <div class="w-full lg:w-1/2 max-w-2xl flex flex-col justify-start">
       <!-- EXCLUSIVE Tag -->
       <div class="flex items-center mt-2 mb-5">
-        <div class="bg-yellow text-black px-4 py-1 rounded-full text-sm font-semibold mr-3">
+        <div class="bg-yellow-400 text-black px-4 py-1 rounded-full text-sm font-semibold mr-3">
           EXCLUSIVE
         </div>
       </div>
 
       <!-- Headings -->
       <div class="flex items-center space-x-4">
-<div class="flex items-center space-x-6">
-  <!-- Logo: height adjusted to approx same height as heading, rounded corners -->
-  <img src="assets/images/newh2w.jpg" alt="Logo" class="h-20 sm:h-24 rounded-lg object-contain" />
-  
-  <!-- Heading -->
-  <h1 class="text-4xl sm:text-5xl font-bold leading-tight">
-    Health2Wealth<br>
-    <span class="text-corporate-yellow">Summit 2025</span>
-  </h1>
-</div>
+        <div class="flex items-center space-x-6">
+          <!-- Logo: height adjusted to approx same height as heading, rounded corners -->
+          <img src="assets/images/newh2w.jpg" alt="Logo" class="h-16 sm:h-20 rounded-lg object-contain" />
+          
+          <!-- Heading -->
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+            Health2Wealth<br>
+            <span class="text-yellow-400">Summit 2025</span>
+          </h1>
+        </div>
+      </div>
 
-</div>
-
-
-      <p class="text-xl sm:text-2xl text-corporate-yellow italic font-medium mt-4 mb-4">
+      <p class="text-lg sm:text-xl text-yellow-400 italic font-medium mt-4 mb-4">
         Pathway to Prosperity
       </p>
 
@@ -146,13 +145,14 @@
 
       <!-- CTA -->
       <a href="https://forms.gle/SieEB2iwb4mADjD49" target="_blank" rel="noopener noreferrer"
-        class="inline-block bg-yellow text-black w-full sm:w-[60%] font-bold px-6 py-3 rounded-lg shadow-md hover:bg-yellow-600 transition duration-300 text-center">
+        class="inline-block bg-yellow-400 text-black w-full sm:w-3/5 md:w-2/5 font-bold px-6 py-3 rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 text-center">
         Register Now
       </a>
 
       <p class="text-white mt-4">Each ticket is priced at ₹3,499/- </p>
       <p class="text-white text-sm mt-1">* <strong>Terms & Conditions:</strong> All ticket sales are final and non-refundable.</p>
     </div>
+
 
     <!-- Right Content -->
     <div class="w-full lg:w-1/2 relative bg-gradient-to-b from-white via-gray-50 to-white p-6 rounded-xl shadow-xl flex flex-col justify-between min-h-[380px]">
@@ -286,13 +286,13 @@
         <img src="assets/images/prosperity2.png" alt="Objective Icon" class="mx-auto mb-4 w-12 h-12">
         <h3 class="font-semibold text-lg mb-2">Summit Objective</h3>
         <p>True wealth & sustainable success is built at the intersection of personal well-being, purposeful leadership, and empowered communities
-        </br> H2W Summit 2025 is a small attempt in this direction. </p>
+        </br></br> H2W Summit 2025 is a small attempt in this direction. </p>
         </p>
       </div>
       <div>
         <img src="assets/images/customer2.png" alt="Attendees Icon" class="mx-auto mb-4 w-12 h-12">
         <h3 class="font-semibold text-lg mb-2">Key Attendees</h3>
-        <p>Industry Experts, HNIs, Executives & Senior Professionals.</p>
+        <p>Industry Experts, High Net-Worth </br> Individuals, Executives and </br> Senior Professionals.</p>
       </div>
     </div>
     <div class="mt-12 text-center">
@@ -327,24 +327,54 @@
             <li>Create <span class="font-semibold">personalised well-being plans</span> for lasting success</li>
           </ul>
         </div>
+        <div>
+
+  <!-- CTA Button -->
+  <div class="mt-8">
+    <a href="https://forms.gle/SieEB2iwb4mADjD49" target="_blank" rel="noopener noreferrer"
+      class="inline-block bg-yellow-400 text-black w-full sm:w-3/5 md:w-2/5 font-bold px-6 py-3 rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 text-center">
+      Register Now
+    </a>
+  </div>
+</div>
+
       </div>
     </div>
 
 <!-- Right Column: Key Takeaways -->
-    <div>
-      <h2 class="text-2xl font-bold mb-8 text-[#F9C100]">Key Takeaways</h2>
-      <ul class="list-disc list-inside space-y-4 text-md">
-      <li> Actionable insights on integrating wellness into personal and professional life.</li>
+<div>
+  <h2 class="text-2xl font-bold mb-8 text-[#F9C100]">Key Takeaways</h2>
+  <ul class="space-y-6 text-md">
 
-      <li> Experiential knowledge from experts in well-being, finance, leadership, and entrepreneurship.</li>
+    <li class="flex items-start space-x-4">
+      <img src="assets/images/leadership2.png" alt="Insight Icon" class="w-10 h-10 mt-1" />
+      <span>Actionable insights on integrating wellness into personal and professional life.</span>
+    </li>
 
-      <li> Expanded networks with like-minded professionals, individuals, and thought leaders.</li>
+    <li class="flex items-start space-x-4">
+      <img src="assets/images/leadership1.png" alt="Experts Icon" class="w-10 h-10 mt-1" />
+      <span>Experiential knowledge from experts in well-being, finance, leadership, and entrepreneurship.</span>
+    </li>
 
-      <li>Holistic strategies to build healthier mind, body and emotions to build resilient businesses</li>
+    <li class="flex items-start space-x-4">
+      <img src="assets/images/3.png" alt="Network Icon" class="w-10 h-10 mt-1" />
+      <span>Expanded networks with like-minded professionals, individuals, and thought leaders.</span>
+    </li>
 
-      <li>A renewed sense of purpose and clarity to thrive in both work and life.</li>
-      </ul>
-    </div>   
+    <li class="flex items-start space-x-4">
+      <img src="assets/images/4.png" alt="Holistic Icon" class="w-10 h-10 mt-1" />
+      <span>Holistic strategies to build healthier mind, body and emotions to build resilient businesses.</span>
+    </li>
+
+    <li class="flex items-start space-x-4">
+      <img src="assets/images/wlb.png" alt="Purpose Icon" class="w-10 h-10 mt-1" />
+      <span>A renewed sense of purpose and clarity to thrive in both work and life.</span>
+    </li>
+
+  </ul>
+</div>
+
+ 
 
   </div>
 </section>
@@ -439,17 +469,24 @@
       <p class="text-gray-600 text-sm text-center">At the forefront of fintech growth and compliance in India’s digital gaming sector.</p>
     </div>
 
-    <!-- Rajnikant Patel -->
-    <div class="flex flex-col items-center h-full">
-      <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
-        <img src="assets/images/Commitee/1.png" alt="Rajnikant Patel" class="object-cover w-full h-full">
-      </div>
-      <h3 class="text-[#392E7F] font-semibold text-lg mb-1 text-center">Rajnikant Patel</h3>
-      <p class="text-purple-900 text-sm mb-2 text-center">Chairman</p>
-      <p class="text-gray-600 text-sm text-center">Revolutionized India’s financial markets as former MD & CEO of BSE and ICEX.</p>
-    </div>
+    <!-- Founders and Advisory Board Updated Section -->
 
-    <!-- Viresh Patel -->
+<!-- Our Founders Heading -->
+<div class="col-span-full">
+  <h2 class="text-3xl font-bold text-[#392E7F] mb-8 text-center">Our Founders</h2>
+</div>
+
+<!-- Rajnikant Patel -->
+<div class="flex flex-col items-center h-full">
+  <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
+    <img src="assets/images/Commitee/1.png" alt="Rajnikant Patel" class="object-cover w-full h-full">
+  </div>
+  <h3 class="text-[#392E7F] font-semibold text-lg mb-1 text-center">Rajnikant Patel</h3>
+  <p class="text-purple-900 text-sm mb-2 text-center">Chairman</p>
+  <p class="text-gray-600 text-sm text-center">Revolutionized India’s financial markets as former MD & CEO of BSE and ICEX.</p>
+</div>
+
+<!-- Viresh Patel -->
     <div class="flex flex-col items-center h-full">
       <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
         <img src="assets/images/Commitee/2.png" alt="Viresh Patel" class="object-cover w-full h-full">
@@ -459,37 +496,42 @@
       <p class="text-gray-600 text-sm text-center">Versatile leader across BFSI, IT, education, and healthcare with 27+ years of impact.</p>
     </div>
 
-    <!-- Jyoti Patel -->
-    <div class="flex flex-col items-center h-full">
-      <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
-        <img src="assets/images/Commitee/3.png" alt="Jyoti Patel" class="object-cover w-full h-full">
-      </div>
-      <h3 class="text-[#392E7F] font-semibold text-lg mb-1 text-center">Jyoti Patel</h3>
-      <p class="text-purple-900 text-sm mb-2 text-center">Director</p>
-      <p class="text-gray-600 text-sm text-center">Educator and women empowerment advocate with over 25 years of influence.</p>
-    </div>
 
-    <!-- Dr. R.B. Barman -->
-    <div class="flex flex-col items-center h-full">
-      <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
-        <img src="assets/images/Commitee/4.png" alt="Dr. R.B. Barman" class="object-cover w-full h-full">
-      </div>
-      <h3 class="text-[#392E7F] font-semibold text-lg mb-1 text-center">Dr. R.B. Barman</h3>
-      <p class="text-purple-900 text-sm mb-2 text-center">Former ED, RBI</p>
-      <p class="text-gray-600 text-sm text-center">Architect of India’s digital payment revolution; shaped UPI and data governance.</p>
-    </div>
-
-    <!-- Sanjay Ubale (Centered Card) -->
-    <div class="flex flex-col items-center h-full md:col-span-1 md:col-start-2">
-      <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
-        <img src="assets/images/Commitee/5.png" alt="Sanjay Ubale" class="object-cover w-full h-full">
-      </div>
-      <h3 class="text-[#392E7F] font-semibold text-lg mb-1 text-center">Sanjay Ubale</h3>
-      <p class="text-purple-900 text-sm mb-2 text-center">Former IAS Officer</p>
-      <p class="text-gray-600 text-sm text-center">Governance & infrastructure expert with key roles at Tata Realty & Gates Foundation.</p>
-    </div>
-
+<!-- Jyoti Patel -->
+<div class="flex flex-col items-center h-full">
+  <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
+    <img src="assets/images/Commitee/3.png" alt="Jyoti Patel" class="object-cover w-full h-full">
   </div>
+  <h3 class="text-[#392E7F] font-semibold text-lg mb-1 text-center">Jyoti Patel</h3>
+  <p class="text-purple-900 text-sm mb-2 text-center">Director</p>
+  <p class="text-gray-600 text-sm text-center">Educator and women empowerment advocate with over 25 years of influence.</p>
+</div>
+
+<!-- Our Advisory Board Heading -->
+<div class="col-span-full">
+  <h2 class="text-3xl font-bold text-[#392E7F] mb-8 mt-12 text-center">Our Advisory Board</h2>
+</div>
+
+<!-- Dr. R.B. Barman -->
+<div class="flex flex-col items-center h-full">
+  <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
+    <img src="assets/images/Commitee/4.png" alt="Dr. R.B. Barman" class="object-cover w-full h-full">
+  </div>
+  <h3 class="text-[#392E7F] font-semibold text-lg mb-1 text-center">Dr. R.B. Barman</h3>
+  <p class="text-purple-900 text-sm mb-2 text-center">Former ED, RBI</p>
+  <p class="text-gray-600 text-sm text-center">Architect of India’s digital payment revolution; shaped UPI and data governance.</p>
+</div>
+
+<!-- Sanjay Ubale -->
+<div class="flex flex-col items-center h-full md:col-span-1 md:col-start-2">
+  <div class="w-56 h-72 overflow-hidden rounded-full mb-6">
+    <img src="assets/images/Commitee/5.png" alt="Sanjay Ubale" class="object-cover w-full h-full">
+  </div>
+  <h3 class="text-[#392E7F] font-semibold text-lg mb-1 text-center">Sanjay Ubale</h3>
+  <p class="text-purple-900 text-sm mb-2 text-center">Former IAS Officer</p>
+  <p class="text-gray-600 text-sm text-center">Governance & infrastructure expert with key roles at Tata Realty & Gates Foundation.</p>
+</div>
+
 </section>
 
 
