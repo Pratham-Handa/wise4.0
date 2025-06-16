@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/alpinejs" defer></script>
-  
+
   <!-- Add this in your <head> section -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
@@ -75,6 +75,7 @@
       <a href="./index.html#whyus" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Why Us?</a>
       <a href="./index.html#about" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">About Us</a>
       <a href="./index.html#events" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Events</a>
+      <a href="#gallery" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Gallery</a>
       <a href="#contact" class="bg-[#392E7F] text-[#FFC700] px-4 py-2 rounded-sm font-semibold hover:bg-[#2d2464] transition">Connect Now</a>
     </nav>
 
@@ -101,9 +102,11 @@
     <a href="./index.html#whyus" class="block hover:text-[#FFC700]">Why Us?</a>
     <a href="./index.html#about" class="block hover:text-[#FFC700]">About Us</a>
     <a href="./index.html#events" class="block hover:text-[#FFC700]">Events</a>
+    <a href="#gallery" class="block hover:text-[#FFC700]">Gallery</a>
     <a href="#contact" class="block bg-[#392E7F] text-[#FFC700] px-4 py-2 rounded-sm font-semibold hover:bg-[#2d2464] transition">Connect Now</a>
   </div>
 </header>
+
 
 
 <!-- WhatsApp Button -->
@@ -117,170 +120,151 @@
   
 
 
-<section class="bg-[#392E7F] text-white pt-16 pb-4 px-6 lg:px-20">
-
-  <div class="flex flex-col lg:flex-row justify-between w-full gap-12">
+<section class="bg-[#392E7F] text-white pt-4 pb-4 px-6 lg:px-20" x-data="{ showFlipbook: false }">
+  <div class="flex flex-col lg:flex-row justify-between items-stretch gap-12 w-full">
 
     <!-- Left Content -->
-    <div class="w-full lg:w-1/2 max-w-2xl flex flex-col justify-start">
+    <div class="w-full lg:w-1/2 flex flex-col justify-between bg-transparent rounded-xl shadow-xl p-6 min-h-[500px]">
       <!-- EXCLUSIVE Tag -->
-      <div class="flex items-center mt-2 mb-5">
-        <div class="bg-yellow-400 text-black px-4 py-1 rounded-full text-sm font-semibold mr-3">
-          EXCLUSIVE
+      <div>
+        <div class="flex items-center mt-2 mb-5">
+          <div class="bg-yellow-400 text-black px-4 py-1 rounded-full text-sm font-semibold mr-3">
+            EXCLUSIVE
+          </div>
         </div>
-      </div>
 
-      <!-- Headings -->
-      <div class="flex items-center space-x-4">
-        <div class="flex items-center space-x-6">
-          <!-- Logo: height adjusted to approx same height as heading, rounded corners -->
+        <!-- Heading and Logo -->
+        <div class="flex items-center space-x-4">
           <img src="assets/images/newh2w.jpg" alt="Logo" class="h-16 sm:h-20 rounded-lg object-contain" />
-          
-          <!-- Heading -->
           <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
             Health2Wealth<br>
             <span class="text-yellow-400">Summit 2025</span>
           </h1>
         </div>
+
+        <p class="text-lg sm:text-xl text-yellow-400 italic font-medium mt-4 mb-4">
+          Pathway to Prosperity
+        </p>
+
+        <p class="text-base sm:text-lg text-white/90 mb-6 leading-relaxed">
+          A pioneering summit for holistic wellness to explore the convergence of health and wealth for unprecedented growth.
+        </p>
       </div>
 
-      <p class="text-lg sm:text-xl text-yellow-400 italic font-medium mt-4 mb-4">
-        Pathway to Prosperity
+      <!-- CTA & Info -->
+      <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+        <!-- Event Concluded Button -->
+        <button class="bg-gray-200 text-gray-800 font-bold px-6 py-3 rounded-lg shadow-md w-full sm:w-auto text-center hover:bg-gray-300 transition">
+          Event Concluded
+        </button>
+
+        <!-- View Brochure Button -->
+        <button @click="showFlipbook = true"
+          class="bg-gray-200 text-gray-800 font-bold px-6 py-3 rounded-lg shadow-md w-full sm:w-auto text-center hover:bg-gray-300 transition">
+          View Event Brochure
+        </button>
+      </div>
+
+      <p class="text-white mt-4">
+        Health2Wealth Summit 2025 was successfully conducted <br>
+        at the iconic Bombay Stock Exchange (BSE) on 14th June 2025.
       </p>
-
-      <p class="text-base sm:text-lg text-white/90 mb-6 leading-relaxed">
-        A pioneering summit for holistic wellness to explore the convergence of health and wealth for unprecedented growth.
-      </p>
-
-      <!-- CTA -->
-      <a href="https://forms.gle/SieEB2iwb4mADjD49" target="_blank" rel="noopener noreferrer"
-        class="inline-block bg-yellow-400 text-black w-full sm:w-3/5 md:w-2/5 font-bold px-6 py-3 rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 text-center">
-        Register Now
-      </a>
-
-      <p class="text-white mt-4">Each ticket is priced at ₹3,499/-* </br> (Incl. Networking Lunch)</p>
     </div>
 
+    <!-- Right Content with Slider -->
+    <div class="w-full lg:w-1/2 relative bg-gradient-to-b from-white via-gray-50 to-white p-6 rounded-xl shadow-xl flex flex-col justify-between min-h-[500px]">
+      <div x-data="{
+              images: [
+                'assets/images/black.jpg',
+                'assets/images/black.jpg',
+                'assets/images/black.jpg'
+              ],
+              currentIndex: 0,
+              init() {
+                setInterval(() => this.next(), 5000);
+              },
+              next() {
+                this.currentIndex = (this.currentIndex + 1) % this.images.length;
+              },
+              prev() {
+                this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+              }
+            }" class="mt-4 flex flex-col items-center">
 
-    <!-- Right Content -->
-    <div class="w-full lg:w-1/2 relative bg-gradient-to-b from-white via-gray-50 to-white p-6 rounded-xl shadow-xl flex flex-col justify-between min-h-[380px]">
+        <!-- Image with Blur and Text Overlay -->
+<div class="w-full h-56 rounded-xl overflow-hidden shadow-lg relative">
+  <!-- Image -->
+  <img :src="images[currentIndex]" alt="Event Highlight"
+       class="w-full h-full object-cover transition duration-700 ease-in-out">
 
-      <!-- Countdown -->
-      <div x-data="countdown('2025-06-14T09:15:00')" class="w-full bg-[#392E7F] text-white rounded-lg p-4 border-2 border-[#F9C100] mb-6">
-        <template x-if="!expired">
-          <div>
-            <div class="text-center text-lg font-semibold mb-2 text-[#F9C100]">Event starts in</div>
-            <div class="flex justify-between text-center gap-2">
-              <div>
-                <div class="text-2xl sm:text-3xl font-bold" x-text="days">0</div>
-                <div class="text-sm text-white/80">Days</div>
-              </div>
-              <div>
-                <div class="text-2xl sm:text-3xl font-bold" x-text="hours">0</div>
-                <div class="text-sm text-white/80">Hours</div>
-              </div>
-              <div>
-                <div class="text-2xl sm:text-3xl font-bold" x-text="minutes">0</div>
-                <div class="text-sm text-white/80">Minutes</div>
-              </div>
-              <div>
-                <div class="text-2xl sm:text-3xl font-bold" x-text="seconds">0</div>
-                <div class="text-sm text-white/80">Seconds</div>
-              </div>
-            </div>
-          </div>
-        </template>
-        <template x-if="expired">
-          <div class="text-center text-2xl font-semibold text-[#F9C100]">We’re Live!</div>
-        </template>
-      </div>
-
-      <!-- Location & Time -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <!-- Location -->
-        <div class="flex items-start gap-3">
-          <div class="bg-[#F9C100]/20 p-2 rounded-lg flex items-center justify-center">
-            <a href="https://maps.app.goo.gl/PTXfWT7VHt7cbHJ68" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#F9C100]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-            </a>
-          </div>
-          <div>
-            <div class="font-semibold text-[#392E7F]">Bombay Stock Exchange, Mumbai</div>
-          </div>
-        </div>
-
-        <!-- Time -->
-        <div class="flex items-start gap-3">
-          <div class="bg-[#F9C100]/20 p-2 rounded-lg flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#F9C100]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <div>
-            <div class="font-semibold text-[#392E7F]">14th June, 2025</div>
-            <div class="text-sm text-gray-600">9:15 AM – 1:30 PM IST</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- BSE Logo -->
-<!-- BSE Logo -->
-<!-- BSE Logo - visible on desktop only -->
-<div class="mt-6 hidden sm:block">
-  <img src="assets/images/white.jpg" alt="BSE Logo" class="w-40 h-14 object-contain bg-white p-1 " />
-</div>
-
-<!-- BSE Logo and Intellidea Logo container for mobile (centered) -->
-<div class="sm:hidden text-center mt-6">
-  <img src="assets/images/BSE.jpg" alt="BSE Logo" class="inline-block w-40 h-14 object-contain bg-white p-1 rounded shadow-md" />
-  <img src="assets/images/ideawhite.png" alt="Intellidea Logo" class="inline-block w-40 h-14 object-contain bg-white p-1 rounded shadow-md mt-2" />
-</div>
-
-<!-- Intellidea Logo (absolute bottom right on desktop only) -->
-<div class="absolute bottom-6 right-6 hidden sm:block">
-  <img src="assets/images/ideawhite.png" alt="Intellidea Logo" class="w-40 h-14 object-contain bg-white p-1 rounded shadow-md" />
-</div>
-
-
-    </div>
-    
+  <!-- Coming Soon Overlay -->
+  <div class="absolute inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-10">
+    <span class="text-yellow-400 text-2xl sm:text-3xl font-bold drop-shadow-lg animate-pulse">
+      Coming Soon
+    </span>
   </div>
-  <p class="text-white text-xs text-right mt-6">*Non-Refundable</p>
+</div>
 
-  <!-- Alpine Countdown Script -->
-  <script>
-    function countdown(targetDate) {
-      return {
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
-        expired: false,
-        init() {
-          const target = new Date(targetDate).getTime();
-          const timer = setInterval(() => {
-            const now = new Date().getTime();
-            const distance = target - now;
+<!-- Arrows & Dots (behind blur, still visible for design consistency) -->
+<div class="flex items-center justify-center mt-4 gap-6 flex-wrap relative z-0">
+  <button @click="prev" class="bg-[#392E7F] text-white p-2 rounded-full shadow hover:bg-[#2f2566] transition">
+    &#8592;
+  </button>
 
-            if (distance <= 0) {
-              this.expired = true;
-              clearInterval(timer);
-              return;
-            }
+  <div class="flex gap-2">
+    <template x-for="(image, index) in images" :key="index">
+      <span @click="currentIndex = index"
+            :class="currentIndex === index ? 'bg-[#F9C100]' : 'bg-[#392E7F]'"
+            class="w-3 h-3 rounded-full border-2 border-[#F9C100] cursor-pointer transition-all duration-300">
+      </span>
+    </template>
+  </div>
 
-            this.days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            this.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            this.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            this.seconds = Math.floor((distance % (1000 * 60)) / 1000);
-          }, 1000);
-        }
-      };
-    }
-  </script>
+  <button @click="next" class="bg-[#392E7F] text-white p-2 rounded-full shadow hover:bg-[#2f2566] transition">
+    &#8594;
+  </button>
+</div>
+
+
+        <!-- CTA Button -->
+        <div class="text-center mt-4">
+          <a href="#gallery" class="inline-block bg-[#F9C100] text-[#392E7F] font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-yellow-500 transition duration-300">
+            View Full Gallery
+          </a>
+        </div>
+      </div>
+
+      <!-- Logos -->
+      <div class="mt-6 hidden sm:block">
+        <img src="assets/images/white.jpg" alt="BSE Logo" class="w-40 h-14 object-contain bg-white p-1" />
+      </div>
+      <div class="sm:hidden text-center mt-6">
+        <img src="assets/images/BSE.jpg" alt="BSE Logo" class="inline-block w-40 h-14 object-contain bg-white p-1 rounded shadow-md" />
+        <img src="assets/images/ideawhite.png" alt="Intellidea Logo" class="inline-block w-40 h-14 object-contain bg-white p-1 rounded shadow-md mt-2" />
+      </div>
+      <div class="absolute bottom-6 right-6 hidden sm:block">
+        <img src="assets/images/ideawhite.png" alt="Intellidea Logo" class="w-40 h-14 object-contain bg-white p-1 rounded shadow-md" />
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Flipbook Modal -->
+  <div x-show="showFlipbook" x-cloak class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 p-4">
+    <div class="relative bg-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] overflow-hidden">
+      <!-- Close -->
+      <button @click="showFlipbook = false" class="absolute top-2 right-3 text-red-600 text-3xl font-bold hover:text-red-600 z-10">&times;</button>
+
+      <!-- Embedded Flipbook -->
+      <iframe src="https://online.anyflip.com/afmrp/msos/index.html"
+              class="w-full h-[90vh]"
+              frameborder="0" allowfullscreen scrolling="no">
+      </iframe>
+    </div>
+  </div>
 </section>
+
+
 
 
   <!-- About Section -->
@@ -312,6 +296,43 @@
     </div>
   </section>
 
+
+
+
+<script>
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('gallery', () => ({
+      images: [
+        'assets/images/black.jpg',
+        'assets/images/black.jpg',
+        'assets/images/black.jpg',
+        'assets/images/black.jpg',
+        'assets/images/black.jpg',
+        'assets/images/black.jpg'
+      ],
+      currentIndex: 0,
+      isOpen: false,
+
+      openLightbox(index) {
+        this.currentIndex = index;
+        this.isOpen = true;
+        document.body.style.overflow = 'hidden';
+      },
+      closeLightbox() {
+        this.isOpen = false;
+        document.body.style.overflow = '';
+      },
+      nextImage() {
+        this.currentIndex = (this.currentIndex + 1) % this.images.length;
+      },
+      prevImage() {
+        this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+      }
+    }))
+  })
+</script>
+
+
   <!-- Purpose Section -->
 <section class="bg-[#392E7F] text-white py-16 px-6 lg:px-20">
   <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -339,13 +360,6 @@
         </div>
         <div>
 
-  <!-- CTA Button -->
-  <div class="mt-8">
-    <a href="https://forms.gle/SieEB2iwb4mADjD49" target="_blank" rel="noopener noreferrer"
-      class="inline-block bg-yellow-400 text-black w-full sm:w-3/5 md:w-2/5 font-bold px-6 py-3 rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 text-center">
-      Register Now
-    </a>
-  </div>
 </div>
 
       </div>
@@ -551,6 +565,75 @@
 
 
 </section>
+
+
+<section id="gallery" class="bg-[#392E7F] text-white py-16 px-6 lg:px-20" x-data="gallery">
+  <!-- Header -->
+  <div class="text-center mb-10">
+    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-2">
+      Event <span class="text-yellow-400">Gallery</span>
+    </h2>
+    <p class="text-white/80 max-w-2xl mx-auto">
+      A glimpse into the powerful moments and vibrant energy that shaped the </br> Health2Wealth Summit 2025.
+    </p>
+  </div>
+
+<!-- Gallery Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <template x-for="(image, index) in images" :key="index">
+    <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer" @click="openLightbox(index)">
+      <!-- Image -->
+      <img :src="image" alt="Gallery Image"
+           class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500" />
+
+      <!-- Coming Soon Overlay -->
+      <div class="absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-10">
+        <span class="text-yellow-400 text-xl sm:text-2xl font-bold drop-shadow animate-pulse">
+          Coming Soon
+        </span>
+      </div>
+    </div>
+  </template>
+</div>
+
+  <!-- CTA Buttons -->
+  <div class="flex flex-col sm:flex-row justify-center gap-4 mt-12 flex-wrap items-center">
+    <a href="https://www.youtube.com/@IntelliWiseAcademy" target="_blank"
+       class="inline-flex items-center gap-2 bg-red-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-red-700 transition duration-300">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 576 512">
+        <path d="M549.7 124.1C524.5 111.7 463.8 96 288 96S51.5 111.7 26.3 124.1C12 131 0 146.6 0 164.4v183.1c0 17.8 12 33.4 26.3 40.3C51.5 400.3 112.2 416 288 416s236.5-15.7 261.7-28.1c14.3-6.9 26.3-22.5 26.3-40.3V164.4c0-17.8-12-33.4-26.3-40.3zM232 336V176l142 80-142 80z"/>
+      </svg>
+      Watch on YouTube
+    </a>
+
+    <a href="#top" class="inline-block bg-[#F9C100] text-[#392E7F] font-bold px-6 py-3 rounded-lg shadow-md hover:bg-yellow-500 transition duration-300">
+      Back to Top
+    </a>
+  </div>
+
+  <!-- Fullscreen Lightbox -->
+  <div x-show="isOpen" x-transition.opacity class="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4" @keydown.window.escape="closeLightbox" @click.self="closeLightbox">
+    <div class="relative max-w-5xl w-full">
+      <!-- Close Button -->
+      <button class="absolute top-4 right-4 text-white text-3xl z-10" @click="closeLightbox">&times;</button>
+
+      <!-- Left Arrow -->
+      <button @click="prevImage" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white bg-[#392E7F] p-3 rounded-full shadow hover:bg-[#2f2566] z-10">
+        &#8592;
+      </button>
+
+      <!-- Image -->
+      <img :src="images[currentIndex]" alt="Fullscreen" class="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow-2xl border-4 border-white" />
+
+      <!-- Right Arrow -->
+      <button @click="nextImage" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white bg-[#392E7F] p-3 rounded-full shadow hover:bg-[#2f2566] z-10">
+        &#8594;
+      </button>
+    </div>
+  </div>
+</section>
+
+
 
 
 <!-- Contact Section -->

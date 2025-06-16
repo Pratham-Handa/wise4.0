@@ -137,7 +137,9 @@ Our mission is to make learning smarter, accessible, and impactful by offering c
   <span class="hidden md:inline">Chat on WhatsApp</span>
 </a>
 
-<!-- Health2Wealth Summit Popup Component -->
+
+
+<!-- Health2Wealth Summit Popup Component 
 <div x-data="{ 
     showPopup: true,
     hasBeenClosed: false,
@@ -232,8 +234,10 @@ Our mission is to make learning smarter, accessible, and impactful by offering c
     }
 }" x-init="startAutoAdvance()">
 
+-->
 
-    <!-- Floating Trigger Button (shows after popup is closed) -->
+
+    <!-- Floating Trigger Button (shows after popup is closed) 
 <div x-show="hasBeenClosed && !showPopup" 
      x-transition:enter="transition ease-out duration-300"
      x-transition:enter-start="opacity-0 transform translate-y-4"
@@ -248,8 +252,8 @@ Our mission is to make learning smarter, accessible, and impactful by offering c
   </button>
 </div>
 
-
-    <!-- Popup Overlay -->
+-->
+    <!-- Popup Overlay
     <div 
         x-show="showPopup" 
         x-transition:enter="transition ease-out duration-300"
@@ -260,8 +264,8 @@ Our mission is to make learning smarter, accessible, and impactful by offering c
         x-transition:leave-end="opacity-0"
         class="fixed inset-0 z-50 flex items-center justify-center p-2 md:p-4 popup-overlay bg-black/70"
         x-cloak>
-        
-        <!-- Popup Content -->
+         -->
+        <!-- Popup Content 
         <div 
             @click.away="closePopup()"
             x-transition:enter="transition ease-out duration-300"
@@ -272,8 +276,8 @@ Our mission is to make learning smarter, accessible, and impactful by offering c
             x-transition:leave-end="opacity-0 transform scale-95"
             class="relative bg-white rounded-xl md:rounded-2xl shadow-2xl w-full max-w-7xl h-[95vh] md:h-[90vh] overflow-hidden"
             x-cloak>
-            
-            <!-- Close Button -->
+            -->
+            <!-- Close Button 
             <button 
                 @click="closePopup()" 
                 class="absolute top-3 right-3 md:top-6 md:right-6 text-white hover:text-corporate-yellow z-20 bg-black/20 rounded-full p-2 backdrop-blur-sm transition duration-300">
@@ -281,13 +285,13 @@ Our mission is to make learning smarter, accessible, and impactful by offering c
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-            
-            <!-- Mobile Layout (Stacked) -->
+            -->
+            <!-- Mobile Layout (Stacked) 
             <div class="block md:hidden h-full overflow-y-auto">
-                
-                <!-- Mobile Header Section -->
-                <div class="gradient-bg text-white p-6 relative overflow-hidden">
-                    <!-- Background Pattern -->
+                -->
+                <!-- Mobile Header Section 
+                <div class="gradient-bg text-white p-6 relative overflow-hidden"> -->
+                    <!-- Background Pattern 
                     <div class="absolute inset-0 opacity-10">
                         <div class="absolute top-5 right-5 w-20 h-20 border border-white/30 rounded-full"></div>
                         <div class="absolute bottom-10 left-5 w-16 h-16 border border-white/30 rounded-full"></div>
@@ -312,8 +316,8 @@ Our mission is to make learning smarter, accessible, and impactful by offering c
                         <p class="text-sm mb-8 text-white/90 leading-relaxed">
                             A pioneering summit for holistic wellness to explore the convergence of health and wealth for unprecedented growth.
                         </p>
-                        
-                        <!-- Mobile Event Details -->
+                        -->
+                        <!-- Mobile Event Details 
                         <div class="space-y-3 mb-6">
                             <div class="flex items-center">
                                 <div class="bg-corporate-yellow/20 p-2 rounded-lg mr-3">
@@ -343,8 +347,8 @@ Our mission is to make learning smarter, accessible, and impactful by offering c
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- Mobile CTA Buttons -->
+                        -->
+                        <!-- Mobile CTA Buttons 
 <div class="flex flex-col gap-[1rem]">
   <a href="https://forms.gle/SieEB2iwb4mADjD49" target="_blank" rel="noopener noreferrer">
     <button class="bg-corporate-yellow hover:bg-corporate-yellow-dark text-black font-bold py-3 px-6 rounded-xl shadow-lg transition duration-300 transform hover:scale-105 w-full">
@@ -361,10 +365,10 @@ Our mission is to make learning smarter, accessible, and impactful by offering c
 
                     </div>
                 </div>
-                
-                <!-- Mobile Why Attend & Speakers -->
-                <div class="p-6 bg-white">
-                    <!-- Why Attend -->
+                -->
+                <!-- Mobile Why Attend & Speakers
+                <div class="p-6 bg-white"> -->
+                    <!-- Why Attend 
 <div class="mb-6">
   <h3 class="text-lg font-bold text-gray-800 mb-4">Elevate Your Life</h3>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
@@ -385,10 +389,10 @@ Our mission is to make learning smarter, accessible, and impactful by offering c
       <span>Iconic Venue - BSE</span>
     </div>
   </div>
-</div>
+</div>-->
 
                     
-                    <!-- Mobile Speakers Carousel -->
+                    <!-- Mobile Speakers Carousel 
 <div x-data="speakersCarousel()">
   <div class="flex items-center justify-between mb-3">
     <h3 class="text-lg font-bold text-gray-800">Speakers and Panelists</h3>
@@ -404,9 +408,9 @@ Our mission is to make learning smarter, accessible, and impactful by offering c
         </svg>
       </button>
     </div>
-  </div>
+  </div>-->
 
-  <!-- Mobile Speaker Display -->
+  <!-- Mobile Speaker Display 
   <div class="relative overflow-hidden bg-gray-50 rounded-xl p-4 h-28">
     <div class="flex transition-transform duration-500 ease-in-out h-full"
          :style="`transform: translateX(-${currentSpeaker * 100}%); width: ${speakers.length * 100}%`">
@@ -431,12 +435,12 @@ Our mission is to make learning smarter, accessible, and impactful by offering c
 </div>
 
                 </div>
-            </div>
+            </div>-->
             
-            <!-- Desktop Layout (Side by Side) -->
-            <div class="hidden md:grid grid-cols-12 h-full">
+            <!-- Desktop Layout (Side by Side) 
+            <div class="hidden md:grid grid-cols-12 h-full">-->
                 
-                <!-- Desktop Left Section -->
+                <!-- Desktop Left Section 
                 <div class="col-span-7 mt-0 gradient-bg text-white p-2 flex flex-col justify-between relative overflow-hidden">
                   <div class="w-[200px] h-[100px] mb-2 flex justify-center items-center p-2 ml-10  rounded-lg">
                 <img src="assets/images/IntelliWise logo.png" alt="Intelliwise" class="object-contain max-w-full max-h-full" />
@@ -449,21 +453,21 @@ Our mission is to make learning smarter, accessible, and impactful by offering c
     </div>
 
                     
-                    
-                    <!-- Header -->
+              -->      
+                    <!-- Header 
 <div class="relative z-10 mb-[30rem]">
-  <div class="flex items-center mb-4 space-x-6">
-    <!-- Logo -->
+  <div class="flex items-center mb-4 space-x-6">-->
+    <!-- Logo 
     <img src="assets/images/newh2w.jpg" alt="Logo" class="sm:h-24 rounded-lg object-contain" />
-    
-    <!-- Heading -->
+    -->
+    <!-- Heading 
     <h1 class="text-4xl sm:text-5xl font-bold  leading-tight">
       Health2Wealth<br>
       <span class="text-corporate-yellow">Summit 2025</span>
     </h1>
-  </div>
+  </div>-->
 
-  <!-- Subtitle & Description -->
+  <!-- Subtitle & Description 
   <div class="mt-6 mb-12">
     <p class="text-xl lg:text-2xl text-corporate-yellow italic font-medium mt-3">
       Pathway to Prosperity
@@ -471,15 +475,18 @@ Our mission is to make learning smarter, accessible, and impactful by offering c
     <p class="text-lg text-white leading-relaxed  mb-4">
       A pioneering summit for holistic wellness to explore the convergence of health and wealth for unprecedented growth.
     </p>
-    <!-- Partner Logos with Details and CTAsx -->
-  <div class="flex flex-wrap md:flex-nowrap justify-center gap-[10rem]">
 
-    <!-- BSE Section -->
+    -->
+    <!-- Partner Logos with Details and CTAsx 
+  <div class="flex flex-wrap md:flex-nowrap justify-center gap-[10rem]">
+-->
+    <!-- BSE Section 
     <div class="flex flex-col items-center space-y-4 w-[220px]">
       <div class="w-[200px] h-[100px] flex justify-center items-center p-2 rounded-lg">
         <img src="assets/images/BSE.jpg" alt="BSE" class="object-contain scale-60 rounded-md max-w-full max-h-full" />
       </div>
-      <!-- Location-->
+      -->
+      <!-- Location
       <div class="flex items-center">
         <div class="bg-corporate-yellow/20 p-2  rounded-lg mr-2">
           <a href="https://maps.app.goo.gl/PTXfWT7VHt7cbHJ68" target="_blank" rel="noopener noreferrer">
@@ -493,22 +500,23 @@ Our mission is to make learning smarter, accessible, and impactful by offering c
           <div class="font-semibold text-white">At Bombay Stock Exchange</div>
         </div>
       </div>
-      <!-- CTA Button -->
+      -->
+      <!-- CTA Button 
       <a href="https://forms.gle/SieEB2iwb4mADjD49" target="_blank" rel="noopener noreferrer" class="w-full">
         <button class="w-full bg-corporate-yellow hover:bg-corporate-yellow-dark text-black font-semibold py-2 px-4 rounded-xl shadow-md transition-transform hover:scale-105">
           Register
         </button>
       </a>
     </div>
-
+-->
   
 
-    <!-- Intellidea Section -->
+    <!-- Intellidea Section 
     <div class="flex flex-col items-center space-y-4 w-[220px]">
       <div class="w-[200px] h-[100px] flex justify-center items-center p-2 rounded-lg">
         <img src="assets/images/intellidea.png" alt="Intellidea" class="object-contain scale-150 max-w-full max-h-full" />
-      </div>
-      <!-- Time -->
+      </div>-->
+      <!-- Time 
       <div class="flex items-center">
         <div class="bg-corporate-yellow/20 p-2 rounded-lg mr-2">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-corporate-yellow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -519,8 +527,8 @@ Our mission is to make learning smarter, accessible, and impactful by offering c
           <div class="font-semibold text-white">On 14th June, 2025</div>
           <div class="text-sm text-white/80">9:15 AM - 1:30 PM</div>
         </div>
-      </div>
-      <!-- CTA Button -->
+      </div>-->
+      <!-- CTA Button 
       <a href="event.html" class="w-full">
         <button class="w-full bg-corporate-yellow hover:bg-corporate-yellow-dark text-black font-semibold py-2 px-4 rounded-xl shadow-md transition-transform hover:scale-105">
           Know More
@@ -532,21 +540,21 @@ Our mission is to make learning smarter, accessible, and impactful by offering c
 
   </div>
 </div>
-
+-->
                 
-                <!-- Desktop Right Section -->
+                <!-- Desktop Right Section 
                 <div class="col-span-5 bg-white flex flex-col">
-                    
-                    <!-- Hero Image Section -->
+                    -->
+                    <!-- Hero Image Section 
                     <div class="h-[35%] bg-grey">
   <img src="assets/images/plane.jpg" alt="H2WEvent" class="w-full h-full object-cover rounded-none">
 </div>  
-
+-->
                     
-                    <!-- Why Attend & Speakers Section -->
+                    <!-- Why Attend & Speakers Section 
                     <div class="h-1/2 p-6 flex flex-col">
-                        
-                        <!-- Why Attend -->
+                        -->
+                        <!-- Why Attend 
                         <div class="mb-6">
                             <h3 class="text-xl font-bold text-gray-800 mb-3">Elevate your Life</h3>
                             <div class="grid grid-cols-2 gap-3 text-sm">
@@ -567,10 +575,12 @@ Our mission is to make learning smarter, accessible, and impactful by offering c
                                     <span>Iconic Venue - BSE</span>
                                 </div>
                         </div>
+                        -->
                         
-                        <!-- Speakers Carousel -->
+                        <!-- Speakers Carousel 
 <div class="flex-1">
-  <!-- Heading with spacing -->
+  -->
+  <!-- Heading with spacing 
   <div class="flex items-center justify-between mb-2">
     <h3 class="text-xl font-bold mt-5 text-gray-800">Speakers and Panelists</h3>
     <div class="flex space-x-2">
@@ -586,8 +596,8 @@ Our mission is to make learning smarter, accessible, and impactful by offering c
       </button>
     </div>
   </div>
-
-  <!-- Speaker Display -->
+-->
+  <!-- Speaker Display 
   <div class="relative overflow-hidden bg-gray-50 rounded-xl p-4 min-h-[9rem] mt-2">
   <div class="flex transition-transform duration-500 ease-in-out"
        :style="`transform: translateX(-${currentSpeaker * 100}%); width: ${speakers.length * 100}%`">
@@ -619,7 +629,7 @@ Our mission is to make learning smarter, accessible, and impactful by offering c
         </div>
     </div>
 </div>
-
+-->
 
 
 <!-- Carousel Section Matching Header Width -->
@@ -929,23 +939,26 @@ Our mission is to make learning smarter, accessible, and impactful by offering c
 <!-- Events Section -->
 <section id="events" class="py-20 bg-white">
   <div class="max-w-7xl mx-auto px-6 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-purple-900 mb-12">Upcoming Events</h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-purple-900 mb-12">Past Events</h2>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
       
-      <!-- Featured Event -->
+      <!-- Past Event -->
       <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition hover:scale-105">
-  <div class="w-full h-52 flex items-center justify-center bg-white">
-    <img src="assets/images/newh2w.jpg" alt="Health2Wealth Summit" class="object-contain h-full">
-  </div>
-  <div class="p-6 text-left">
-    <h3 class="text-xl font-semibold text-purple-800 mb-2">Health2Wealth Summit 2025</h3>
-    <p class="text-gray-600 mb-4">Join industry leaders for a transformative journey on holistic growth for healthy mind, body and prosperity</p>
-    <a href="event.html" class="inline-block px-5 py-2 rounded-lg transition" style="background-color: #F9C100; color: #392E7F;">
-      View Event
-    </a>
-  </div>
-</div>
+        <div class="w-full h-52 flex items-center justify-center bg-white">
+          <img src="assets/images/newh2w.jpg" alt="Health2Wealth Summit" class="object-contain h-full">
+        </div>
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-semibold text-purple-800 mb-1">Health2Wealth Summit 2025</h3>
+          <p class="text-sm text-gray-500 mb-2">Held on 14th June 2025 at Bombay Stock Exchange, Mumbai</p>
+          <p class="text-gray-600 mb-4">Industry leaders gathered for a transformative summit on holistic growth of mind, body, and prosperity.</p>
+          <a href="event.html" class="inline-block px-5 py-2 rounded-lg transition" style="background-color: #f9c100; color: #392E7F;">
+            View Highlights
+          </a>
+        </div>
+      </div>
+
+
 
 
       <!-- Coming Soon Event 1 -->
