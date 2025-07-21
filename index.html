@@ -41,6 +41,17 @@ Confidence and Capability Development, Career Counseling, Online learning, Best 
       box-shadow: 0 10px 25px rgba(69, 39, 160, 0.3);
     }
     
+    @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .animate-marquee {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 30 s linear infinite;
+  }
+
     @media (max-width: 768px) {
       .floating-button {
         bottom: 80px; /* Keep above WhatsApp on mobile too */
@@ -99,6 +110,7 @@ Confidence and Capability Development, Career Counseling, Online learning, Best 
       <a href="#whyus" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Why Us?</a>
       <a href="#about" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">About Us</a>
       <a href="#events" class="hover:text-[#FFC700] hover:underline underline-offset-[6px]">Events</a>
+      <a href="#resources" class="block hover:text-[#FFC700]">Resources</a>
       <a href="#contact" class="bg-[#FFC700] text-[#392E7F] px-4 py-2 rounded-sm font-semibold hover:bg-yellow-500 transition">Connect Now</a>
     </nav>
 
@@ -125,6 +137,7 @@ Confidence and Capability Development, Career Counseling, Online learning, Best 
     <a href="#whyus" class="block hover:text-[#FFC700]">Why Us?</a>
     <a href="#about" class="block hover:text-[#FFC700]">About Us</a>
     <a href="#events" class="block hover:text-[#FFC700]">Events</a>
+    <a href="#resources" class="block hover:text-[#FFC700]">Resources</a>
     <a href="#contact" class="block bg-[#FFC700] text-[#392E7F] px-4 py-2 rounded-sm font-semibold hover:bg-yellow-500 transition">Connect Now</a>
   </div>
 </header>
@@ -634,8 +647,15 @@ Confidence and Capability Development, Career Counseling, Online learning, Best 
 
 
 <!-- Carousel Section Matching Header Width -->
+
 <section id="home" class="relative overflow-hidden bg-black" x-data="carousel()" x-init="init()" @mouseenter="pause()" @mouseleave="play()">
+  <div class="w-full top-2 bg-[#392E7F] text-white opacity-100 whitespace-nowrap py-2">
+  <div class="animate-marquee text-white text-sm md:text-base font-medium px-4 inline-block">
+    Upcoming SkillWise Intro Webinar | SkillWise Certification Program Registrations Live | New Section Launched - Resources | Fill out Contact Form to connect | E-Brochures for Download Now Available
+  </div>
+</div>
   <div class="w-full max-w-[100%] h-[92vh]">
+    
     <template x-for="(video, index) in videos" :key="index">
       <div x-show="current === index"
            x-transition:enter="transition-opacity duration-7000"
@@ -940,7 +960,7 @@ Confidence and Capability Development, Career Counseling, Online learning, Best 
 <!-- Events Section -->
 <section id="events" class="py-20 bg-white">
   <div class="max-w-7xl mx-auto px-6 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-purple-900 mb-12">Past Events</h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-purple-900 mb-12">Events</h2>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
       
@@ -965,14 +985,15 @@ Confidence and Capability Development, Career Counseling, Online learning, Best 
       <!-- Coming Soon Event 1 -->
       <div class="relative bg-white rounded-xl shadow-md overflow-hidden h-full">
         <div class="w-full h-52 overflow-hidden relative">
-          <img src="assets/images/programs/ai.png" alt="Coming Soon" class="w-full h-full object-cover filter blur-md brightness-75">
-          <div class="absolute inset-0 flex items-center justify-center">
-            <span class="text-yellow-400 shadow-lg text-xl font-semibold">Coming Soon</span>
-          </div>
+          <img src="assets/images/Banner.png" alt="Coming Soon" class="w-full h-full object-cover ">
         </div>
-        <div class="p-6 text-center">
-          <h3 class="text-xl font-semibold text-purple-800 mb-1">Stay Tuned for more information</h3>
-          <p class="text-gray-500 text-center justify-center text-sm"></p>
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-semibold text-purple-800 mb-1">SkillWise Certificate Program for School Students</h3>
+          <p class="text-sm text-gray-500 mb-2">For School Students [Grade 5 to 10]: Decode Financial Literacy, AI and Digital Security</p>
+          <p class="text-gray-600 mb-4">3 in 1 Program covering MoneyWise, AiWise and CyberWise</p>
+          <a href="https://forms.gle/hXCgpup3E7Z2Daic9" class="inline-block px-5 py-2 rounded-lg transition" style="background-color: #f9c100; color: #392E7F;">
+            Register Now
+          </a>
         </div>
       </div>
 
@@ -1077,6 +1098,95 @@ Confidence and Capability Development, Career Counseling, Online learning, Best 
 
   </div>
 </section>
+
+
+<section id="resources" class="py-16 bg-gray-50 text-center">
+  <h2 class="text-4xl font-bold text-[#392E7F] mb-12">Resources</h2>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-6">
+    <!-- Brochure 1 -->
+    <div>
+      <div class="aspect-[16/10] w-full">
+        <iframe style="width:550px;height:350px" src="https://online.anyflip.com/ryhrt/sskr/index.html"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
+      </div>
+      <button onclick="openModal(1)" class="mt-4 bg-[#392E7F] text-white px-6 py-2 rounded-xl hover:bg-[#2b2263] transition">Email Brochure</button>
+    </div>
+
+    <!-- Brochure 2 -->
+    <div>
+      <div class="aspect-[16/10] w-full">
+        <iframe style="width:550px;height:350px" src="https://online.anyflip.com/ryhrt/xzmo/index.html"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
+      </div>
+      <button onclick="openModal(2)" class="mt-4 bg-[#392E7F] text-white px-6 py-2 rounded-xl hover:bg-[#2b2263] transition">Email Brochure</button>
+    </div>
+
+    <!-- Video 1 -->
+    <div>
+      <div class="aspect-video w-full">
+        <iframe class="w-full h-full rounded-xl shadow-md" src="https://www.youtube.com/embed/yd2yKDqwbU0?si=RZEWX0hq65JYwIXy" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- Video 2 -->
+    <div>
+      <div class="aspect-video w-full">
+        <iframe class="w-full h-full rounded-xl shadow-md" src="https://www.youtube.com/embed/dncdU1b3ugM?si=uwHtWtEvg-uubBZR" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup Form Modal -->
+  <div id="formModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+    <div class="bg-white p-6 rounded-xl w-[90%] max-w-md relative shadow-xl">
+      <button onclick="closeModal()" class="absolute top-2 right-4 text-gray-600 text-2xl">&times;</button>
+      <h3 class="text-2xl font-semibold text-[#392E7F] mb-4">Enter Your Details to Download</h3>
+      <form id="brochureForm">
+        <input type="text" name="name" placeholder="Name" required class="w-full mb-3 p-2 border rounded">
+        <input type="text" name="occupation" placeholder="Occupation" required class="w-full mb-3 p-2 border rounded">
+        <input type="tel" name="contact" placeholder="Contact Number" required class="w-full mb-3 p-2 border rounded">
+        <input type="email" name="email" placeholder="Email ID" required class="w-full mb-3 p-2 border rounded">
+        <input type="hidden" name="brochure" id="brochureType">
+        <button type="submit" class="bg-[#392E7F] w-full text-white py-2 rounded-xl hover:bg-[#2b2263] transition">Submit & Email</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  let selectedBrochure = '';
+
+  function openModal(brochureNumber) {
+    document.getElementById("formModal").classList.remove("hidden");
+    selectedBrochure = brochureNumber;
+    document.getElementById("brochureType").value = "Brochure " + brochureNumber;
+  }
+
+  function closeModal() {
+    document.getElementById("formModal").classList.add("hidden");
+  }
+
+  document.getElementById("brochureForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    fetch("https://script.google.com/macros/s/AKfycbyQ9_dhQx5LvTHeXerqfH7v_-hYxhSCQu0zHdcz-Rt6Tca8lYwo0sfZvrZv5aewU7e0Rw/exec", {
+      method: "POST",
+      body: formData
+    })
+    .then(() => {
+      const brochureLinks = {
+        1: "assets/downloads/Intellidea.pdf",
+        2: "assets/downloads/IntelliWise.pdf"
+      };
+      window.open(brochureLinks[selectedBrochure], '_blank');
+      closeModal();
+    })
+    .catch((error) => {
+      alert("Something went wrong. Please try again.");
+      console.error(error);
+    });
+  });
+</script>
 
 
 
